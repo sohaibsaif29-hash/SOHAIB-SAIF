@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title> 𝓝𝓸𝓸𝓻 𝓔𝓲𝓷 𝓑𝓪𝓫𝓪 🌚♥️</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#04101b; --accent1:#ff2d95; --accent2:#00e6ff; --glass: rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family:"Poppins",system-ui,Segoe UI,Arial;
+      background:
+        radial-gradient(900px 400px at 10% 10%, rgba(255,45,149,0.04), transparent),
+        radial-gradient(700px 350px at 90% 90%, rgba(0,230,255,0.03), transparent),
+        linear-gradient(180deg,#071023,#04101b);
+      color:#fff; display:flex; align-items:center; justify-content:center; padding:24px; overflow:hidden;
+    }
+
+    .card{
+      width:min(98%,1100px);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:18px; padding:22px; display:grid; grid-template-columns:420px 1fr; gap:20px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6); position:relative; z-index:3; border:1px solid rgba(255,255,255,0.03);
+    }
+
+    .left{ text-align:center; display:flex; flex-direction:column; gap:12px; align-items:center; }
+    .cake-ring{ width:280px;height:280px;border-radius:50%; display:flex;align-items:center;justify-content:center;
+                background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+                box-shadow: 0 18px 40px rgba(0,0,0,0.6); position:relative; overflow:visible; }
+    .cake{ width:240px;height:240px;border-radius:50%; overflow:hidden; border:1px solid rgba(255,255,255,0.04);
+           box-shadow: 0 8px 30px rgba(0,0,0,0.55), 0 0 40px rgba(255,45,149,0.06); animation:float 3.6s ease-in-out infinite; }
+    .cake video{ width:100%; height:100%; object-fit:cover; display:block; border-radius:50%; }
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    .title{ font-size:22px; font-weight:700; }
+    .sub{ color:rgba(255,255,255,0.78); font-size:14px; }
+
+    .right{ display:flex; flex-direction:column; gap:14px; align-items:center; justify-content:center; }
+    .countdown{ display:flex; gap:16px; flex-wrap:wrap; justify-content:center; }
+    .time-card{ width:150px; height:120px; border-radius:14px; padding:12px; display:flex; flex-direction:column; align-items:center; justify-content:center;
+                background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.035);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.45); transition: transform .25s ease; }
+    .time-card:hover{ transform: translateY(-6px); }
+    .time-num{ font-size:40px; font-weight:800; }
+    .time-label{ font-size:13px; color:rgba(255,255,255,0.85); margin-top:6px; }
+
+    .controls{ display:flex; gap:10px; align-items:center; justify-content:center; flex-wrap:wrap; margin-top:8px; }
+    .btn{ padding:10px 14px; border-radius:12px; background:var(--glass); border:1px solid rgba(255,255,255,0.035); cursor:pointer; font-weight:700; }
+    .btn.primary{ background: linear-gradient(90deg,var(--accent1),var(--accent2)); color:#04101b; border:none; box-shadow: 0 12px 36px rgba(255,45,149,0.09); }
+    .track-info{ min-width:260px; text-align:center; font-weight:600; color:rgba(255,255,255,0.95); }
+
+    .volBox{ display:flex; gap:8px; align-items:center; }
+    input[type="range"]{ width:140px; }
+
+    #initOverlay{ position:fixed; inset:0; background:linear-gradient(180deg, rgba(4,16,27,0.6), rgba(4,16,27,0.85)); display:flex; align-items:center; justify-content:center; z-index:40; }
+    #initOverlay .box{ padding:22px; border-radius:12px; text-align:center; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.04) }
+
+    #confetti, #balloonLayer{ position:fixed; inset:0; pointer-events:none; z-index:20; }
+    .balloon {
+      position:absolute;
+      bottom:-220px;
+      border-radius:50% 50% 46% 46% / 60% 60% 40% 40%;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.45), inset 0 -10px 26px rgba(255,255,255,0.06);
+      display:flex; align-items:center; justify-content:center; transform-origin:center;
+      will-change: transform, opacity;
+    }
+    .wobble { animation: wobble 3.6s ease-in-out infinite; }
+    @keyframes wobble {
+      0% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(-8px) rotate(4deg); }
+      100% { transform: translateY(0) rotate(-3deg); }
+    }
+
+    @media (max-width:980px){ .card{ grid-template-columns: 1fr; } .cake-ring{ width:220px;height:220px } }
+  </style>
+</head>
+<body>
+
+  <div id="initOverlay" aria-hidden="false">
+    <div class="box">
+      <p>كل سنه وانتِ طيبه ي نور عين بابا كل سنه وانتِ نعمه ف حياتي وماليه عليا دنيتي كلها كل سنه وانتِ احلي واحن بنت ف الدنيا بحبك بحبك اوييييييييي  ي نونتي من يوم ما عرفتك ي نونتي وانا متمنتش اي حاجه ف دنيتي غيرك من يوم ما حبيتك وانا بتمني اليوم اللي اخدك فيه ف حضني وتفضلي معايا طول العمر بحبك ي احلي حاجه ف دنيتي دايما بقلك وهفضل اقلك اني مهما لفيت الدنيا كلها عمري ما هلاقي زيك ي نور عيني عمري ما هلاقي حد بالجمال والحلاوة دي كلها عمري ما هلاقي حد طيب وجميل اوي من جوا زيك كده بحبك اوييييييييي ي نور عيني بحبك اوييييييييي من ساعة ما دخلتي دنيتي وانتِ بقيتي دنيتي ي نور عيني بحب اشوفك اوي واسمع صوتك اوي بحب نفسي وانا معاكي عمري ما كنت ع طبيعتي مع حد كده غير معاكي بحس انك حته مني بتكمليني ب عقلك وطيبتك وحنيتك عليا واستحمالك لي وقت عصبيتي بحبك اوييييييييي مهما اقول عمري ما هقدر اوفيكي حقك ي نور عيني بحبك اوييييييييي بعشقك بعشق ضحكتك اللي اول ما بشوفها بحس اني ف عالم تاني  و لا نظرة عينك ياني ع جمالها وحلاوتها كل حاجه فيكي جميله ي نور عيني بعشقك بعشقك ي نور عيني 9 شهور مع بعض بعشقك كل يوم اكتر من الاول بحب خناقنا لان كل مره بعد اما بنتخانق بكتشف اني اخترت صح بكتشف اني معايا اطيب واحن حد ف الدنيا  ربنا يديمك نعمه ف حياتي  ي نونتي وتفضلي منوره حياتي ودنيتي كلها بحبك بحبك اوييييييييي كل سنه وانتِ احن واجمل بنوته ف الدنيا ربنا يخليكي ليا وتنوري بيتي قريب ي نور عيني 😘</p>
+
+      <div style="margin-top:10px">
+        <button id="initBtn" class="btn primary"> <h3>عيد ميلاد بنتي </h3> </button>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <div id="balloonLayer" aria-hidden="true"></div>
+
+  <main class="card" role="main" aria-label="عداد عيد ميلاد">
+    <section class="left">
+      <div class="cake-ring">
+        <div class="cake">
+          <video id="cakeVid" src="1.mp4" autoplay muted loop playsinline></video>
+        </div>
+      </div>
+      <div class="title"> 🎂 9 - 9 🎂</div>
+      <div class="sub"> عيد ميلاد من كانت لي رفيقة دربي وستبقى لي رفيقة عمري </div>
+    </section>
+
+    <section class="right" aria-live="polite">
+      <div class="countdown" role="group" aria-label="الوقت المتبقي">
+        <div class="time-card"><div class="time-num" id="days">00</div><div class="time-label">أيام</div></div>
+        <div class="time-card"><div class="time-num" id="hours">00</div><div class="time-label">ساعات</div></div>
+        <div class="time-card"><div class="time-num" id="minutes">00</div><div class="time-label">دقائق</div></div>
+        <div class="time-card"><div class="time-num" id="seconds">00</div><div class="time-label">ثواني</div></div>
+      </div>
+
+      <div class="controls" role="toolbar" aria-label="متحكمات التشغيل">
+        <button id="prevBtn" class="btn">⏮ السابق</button>
+        <button id="playBtn" class="btn primary">تشغيل القائمة</button>
+        <button id="pauseBtn" class="btn">إيقاف مؤقت</button>
+        <button id="nextBtn" class="btn">التالي ⏭</button>
+
+        <div class="track-info" id="trackInfo">قائمة الخلفية: (لم تُشغّل بعد)</div>
+      </div>
+
+      <div class="controls">
+        <div class="volBox">
+          <label for="volRange">مستوى الصوت</label>
+          <input id="volRange" type="range" min="0" max="100" value="70">
+        </div>
+        <button id="toggleBalloons" class="btn">إيقاف/تشغيل البالونات</button>
+      </div>
+    </section>
+  </main>
+
+  <audio id="bgAudio" src="https://www.dropbox.com/scl/fi/ljl2jx0rdpadn7smacozj/party.mp3?rlkey=0yddwekvxioiy4mr6u54ar1d9&st=rhdigu0j&dl=1" preload="auto"></audio>
+  <audio id="partyAudio" src="https://www.dropbox.com/scl/fi/n2hm9kgrf89s8ih7ouyd2/song1.mp3?rlkey=ydw6ka7f255m9zdwifui1oh26&st=bxqf7vnz&dl=1" preload="auto"></audio>
+
+  <script>
+  const PLAYLIST = [
+    
+    'https://www.dropbox.com/scl/fi/ljl2jx0rdpadn7smacozj/party.mp3?rlkey=0yddwekvxioiy4mr6u54ar1d9&st=rhdigu0j&dl=1',
+    'https://www.dropbox.com/scl/fi/6t4sqpw6bh1j8dsfp3hmm/song2.mp3?rlkey=s182ogwzwb7nwi028znptooc5&st=wonbpd1b&dl=1'
+  ];
+
+  const PLAYLIST_NAMES = ['سنة حلوة', 'سنة حلوة يا جميل']; // أسماء الأغاني الظاهرة
+
+  const PARTY_AUDIO = 'https://www.dropbox.com/scl/fi/n2hm9kgrf89s8ih7ouyd2/song1.mp3?rlkey=ydw6ka7f255m9zdwifui1oh26&st=bxqf7vnz&dl=1';
+  const TARGET_STR = "2025-9-9 00:00:00";
+
+  const daysEl = document.getElementById('days'), hoursEl = document.getElementById('hours'),
+        minsEl = document.getElementById('minutes'), secsEl = document.getElementById('seconds');
+
+  const prevBtn = document.getElementById('prevBtn'), playBtn = document.getElementById('playBtn'),
+        pauseBtn = document.getElementById('pauseBtn'), nextBtn = document.getElementById('nextBtn'),
+        trackInfo = document.getElementById('trackInfo'), volRange = document.getElementById('volRange'),
+        toggleBalloonsBtn = document.getElementById('toggleBalloons'),
+        initOverlay = document.getElementById('initOverlay'), initBtn = document.getElementById('initBtn');
+
+  let currentIndex = 0, isPlaying = false;
+  const bgAudio = document.getElementById('bgAudio');
+  const partyAudio = document.getElementById('partyAudio');
+
+  function updateTrackDisplay(){
+    trackInfo.textContent = 'قائمة الخلفية: ' + PLAYLIST_NAMES[currentIndex];
+  }
+
+  function playCurrent(){
+    bgAudio.src = PLAYLIST[currentIndex];
+    bgAudio.volume = volRange.value/100;
+    bgAudio.play();
+    isPlaying = true;
+    updateTrackDisplay();
+    playBtn.textContent = 'قيد التشغيل';
+  }
+
+  function pauseCurrent(){
+    bgAudio.pause();
+    isPlaying = false;
+    playBtn.textContent = 'تشغيل القائمة';
+  }
+
+  function nextTrack(){
+    currentIndex = (currentIndex + 1) % PLAYLIST.length;
+    if(isPlaying) playCurrent(); else updateTrackDisplay();
+  }
+
+  function prevTrack(){
+    currentIndex = (currentIndex - 1 + PLAYLIST.length) % PLAYLIST.length;
+    if(isPlaying) playCurrent(); else updateTrackDisplay();
+  }
+
+  playBtn.addEventListener('click', ()=>{ isPlaying ? pauseCurrent() : playCurrent(); });
+  pauseBtn.addEventListener('click', pauseCurrent);
+  nextBtn.addEventListener('click', nextTrack);
+  prevBtn.addEventListener('click', prevTrack);
+  volRange.addEventListener('input', ()=>{ 
+    const v = volRange.value/100; 
+    bgAudio.volume = v; 
+    partyAudio.volume = v; 
+  });
+
+  function enableAudioContext(){
+    try{
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if(AC && !window.__audioCtx){
+        window.__audioCtx = new AC();
+        if(window.__audioCtx.state==='suspended') window.__audioCtx.resume().catch(()=>{});
+      }
+    } catch(e){}
+  }
+
+  initBtn.addEventListener('click', ()=>{
+    enableAudioContext();
+    initOverlay.style.display='none';
+    balloonsStart();
+  });
+
+  const target = new Date(TARGET_STR).getTime();
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function tick(){
+    const now = Date.now();
+    const diff = target - now;
+    if(diff <= 0){
+      clearInterval(timer);
+      daysEl.textContent = hoursEl.textContent = minsEl.textContent = secsEl.textContent = '00';
+      onCountdownEnd();
+      return;
+    }
+    const d = Math.floor(diff/(1000*60*60*24)),
+          h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60)),
+          m = Math.floor((diff % (1000*60*60)) / (1000*60)),
+          s = Math.floor((diff % (1000*60)) / 1000);
+    daysEl.textContent = pad(d);
+    hoursEl.textContent = pad(h);
+    minsEl.textContent = pad(m);
+    secsEl.textContent = pad(s);
+  }
+  const timer = setInterval(tick,1000);
+  tick();
+
+  function onCountdownEnd(){
+    bgAudio.pause();
+    partyAudio.volume = volRange.value/100;
+    partyAudio.play();
+    burstConfetti();
+    balloonsStart();
+  }
+
+  const balloonLayer = document.getElementById('balloonLayer');
+  const BAL_COLORS = ['#FF2D95','#00E6FF','#FFD166','#8AFFC1','#C57BFF','#FF9F43'];
+  let balloonTimer = null;
+
+  function createBalloon(){
+    const b = document.createElement('div');
+    b.className = 'balloon wobble';
+    const size = 56 + Math.random()*120;
+    b.style.width = size+'px';
+    b.style.height = Math.round(size*1.25)+'px';
+    b.style.left = (5 + Math.random()*88)+'%';
+    const color = BAL_COLORS[Math.floor(Math.random()*BAL_COLORS.length)];
+    b.style.background = `linear-gradient(180deg, ${color}, ${shadeColor(color,-12)})`;
+    b.style.opacity = 0.98;
+    balloonLayer.appendChild(b);
+    const duration = 9000 + Math.random()*14000;
+    const drift = (Math.random()*40-20);
+    const rotate = (Math.random()*60-30);
+    b.animate([
+      { transform:`translateY(0) rotate(${Math.random()*8-4}deg)`, opacity:1 },
+      { transform:`translateY(-140vh) translateX(${drift}vw) rotate(${rotate}deg)`, opacity:0.95 }
+    ], { duration:duration, easing:'cubic-bezier(.2,.8,.2,1)' });
+    setTimeout(()=>{b.remove();}, duration+300);
+  }
+
+  function shadeColor(hex, percent){
+    if(!hex.startsWith('#')) return hex;
+    const c = hex.replace('#','');
+    const num = parseInt(c,16);
+    let r = (num>>16) + percent; if(r>255) r=255; if(r<0) r=0;
+    let g = ((num>>8)&0x00FF) + percent; if(g>255) g=255; if(g<0) g=0;
+    let b = (num & 0x0000FF) + percent; if(b>255) b=255; if(b<0) b=0;
+    return '#' + ((r<<16)|(g<<8)|b).toString(16).padStart(6,'0');
+  }
+
+  function balloonsStart(){ if(balloonTimer) return; createBalloon(); balloonTimer=setInterval(createBalloon,620); }
+  function balloonsStop(){ if(balloonTimer){ clearInterval(balloonTimer); balloonTimer=null; } }
+
+  toggleBalloonsBtn.addEventListener('click', ()=>{
+    balloonTimer ? (balloonsStop(), toggleBalloonsBtn.textContent='تفعيل البالونات') : (balloonsStart(), toggleBalloonsBtn.textContent='إيقاف البالونات');
+  });
+
+  const confCanvas = document.getElementById('confetti'); 
+  const ctx = confCanvas.getContext('2d');
+
+  function resizeConf(){ confCanvas.width = innerWidth; confCanvas.height = innerHeight; }
+  addEventListener('resize', resizeConf); resizeConf();
+
+  let confetti = [];
+  function burstConfetti(){
+    confetti = [];
+    const colors = ['#ff2d95','#00e6ff','#ffd166','#8affc1','#C57BFF','#ff9f43'];
+    for(let i=0;i<260;i++){
+      confetti.push({
+        x: Math.random()*confCanvas.width,
+        y: Math.random()*-confCanvas.height,
+        size: 6+Math.random()*12,
+        color: colors[Math.floor(Math.random()*colors.length)],
+        speed: 2+Math.random()*6,
+        tilt: Math.random()*Math.PI,
+        spin: (Math.random()*0.12)*(Math.random()>0.5?1:-1)
+      });
+    }
+    requestAnimationFrame(runConfetti);
+  }
+
+  function runConfetti(){
+    ctx.clearRect(0,0,confCanvas.width,confCanvas.height);
+    confetti.forEach(p=>{
+      p.y += p.speed;
+      p.x += Math.sin(p.y*0.02)*2;
+      p.tilt += p.spin;
+      ctx.save();
+      ctx.translate(p.x,p.y);
+      ctx.rotate(p.tilt);
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*0.6);
+      ctx.restore();
+      if(p.y>confCanvas.height+30) p.y=-10;
+    });
+    requestAnimationFrame(runConfetti);
+  }
+</script>
+
+</body>
+</html>
