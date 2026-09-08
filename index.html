@@ -5,244 +5,251 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title> 𝓝𝓸𝓸𝓻 𝓔𝓲𝓷 𝓑𝓪𝓫𝓪 🌚♥️</title>
   <meta name="robots" content="noindex, nofollow">
-  <meta name="googlebot" content="noindex, nofollow">
-
-  <!-- استخدام خط Cairo الاحترافي للغة العربية -->
+  
+  <!-- خطوط احترافية -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --bg-dark: #050b14;
+      --bg-dark: #030712;
       --accent-pink: #ff2d95;
       --accent-cyan: #00e6ff;
-      --glass-bg: rgba(255, 255, 255, 0.03);
+      --accent-purple: #9d00ff;
+      --glass-bg: rgba(15, 20, 35, 0.45);
       --glass-border: rgba(255, 255, 255, 0.08);
       --text-main: #ffffff;
-      --text-muted: rgba(255, 255, 255, 0.65);
+      --text-muted: rgba(255, 255, 255, 0.7);
     }
     
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
+    html, body { height: 100%; overflow: hidden; }
     
     body {
-      font-family: "Cairo", "Poppins", system-ui, sans-serif;
-      background: 
-        radial-gradient(circle at 15% 50%, rgba(255, 45, 149, 0.08), transparent 40%),
-        radial-gradient(circle at 85% 30%, rgba(0, 230, 255, 0.08), transparent 40%),
-        #050b14;
+      font-family: "Cairo", "Poppins", sans-serif;
+      background-color: var(--bg-dark);
       color: var(--text-main);
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 20px;
-      overflow: hidden;
       direction: rtl;
     }
 
-    /* Custom Scrollbar for professional look */
+    /* Animated Background Orbs */
+    .bg-orbs {
+      position: fixed; inset: 0; z-index: 1; overflow: hidden; pointer-events: none;
+    }
+    .orb {
+      position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.4;
+      animation: floatOrbs 20s infinite alternate ease-in-out;
+    }
+    .orb-1 { width: 400px; height: 400px; background: var(--accent-pink); top: -100px; right: -100px; }
+    .orb-2 { width: 500px; height: 500px; background: var(--accent-cyan); bottom: -150px; left: -100px; animation-delay: -5s; }
+    .orb-3 { width: 300px; height: 300px; background: var(--accent-purple); top: 40%; left: 30%; animation-delay: -10s; }
+
+    @keyframes floatOrbs {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(50px, 80px) scale(1.2); }
+      100% { transform: translate(-50px, 40px) scale(0.9); }
+    }
+
+    /* Custom Scrollbar */
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 10px; }
-    ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.4); }
+    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(var(--accent-pink), var(--accent-cyan)); border-radius: 10px; }
 
     .card {
       width: min(100%, 1150px);
       background: var(--glass-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-radius: 24px;
-      padding: 40px;
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border-radius: 30px;
+      padding: 45px;
       display: grid;
       grid-template-columns: 1fr 1.2fr;
       gap: 40px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.6), inset 0 2px 20px rgba(255,255,255,0.05);
       position: relative;
       z-index: 3;
       border: 1px solid var(--glass-border);
+      animation: cardEnter 1s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
     }
 
-    .left { 
-      text-align: center; 
-      display: flex; 
-      flex-direction: column; 
-      gap: 20px; 
-      align-items: center; 
-      justify-content: center;
+    @keyframes cardEnter {
+      from { opacity: 0; transform: translateY(40px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
+    .left { text-align: center; display: flex; flex-direction: column; gap: 20px; align-items: center; justify-content: center; }
+
+    /* Animated Cake Ring */
     .cake-ring {
       width: 290px; height: 290px;
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, rgba(255, 45, 149, 0.1), rgba(0, 230, 255, 0.1));
-      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
       position: relative;
-      padding: 10px;
+      padding: 12px;
+      background: rgba(0,0,0,0.2);
     }
     .cake-ring::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      padding: 2px;
-      background: linear-gradient(45deg, var(--accent-pink), var(--accent-cyan));
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      opacity: 0.5;
+      content: ''; position: absolute; inset: -2px; border-radius: 50%;
+      background: linear-gradient(45deg, var(--accent-pink), var(--accent-purple), var(--accent-cyan), var(--accent-pink));
+      background-size: 400%;
+      z-index: -1;
+      animation: spinGradient 8s linear infinite;
+      filter: blur(8px);
+      opacity: 0.7;
     }
+    @keyframes spinGradient { 0% { background-position: 0% 0%; } 100% { background-position: 400% 0%; } }
 
     .cake {
       width: 100%; height: 100%;
       border-radius: 50%;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8), inset 0 0 20px rgba(0,0,0,0.5);
+      border: 2px solid rgba(255,255,255,0.1);
       animation: float 4s ease-in-out infinite;
     }
     .cake video { width: 100%; height: 100%; object-fit: cover; display: block; }
     
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+    .title { 
+      font-size: 32px; font-weight: 900; letter-spacing: 2px; 
+      font-family: "Poppins", sans-serif; 
+      background: linear-gradient(90deg, #fff, #a1c4fd);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      text-shadow: 0 5px 15px rgba(255,255,255,0.1);
     }
+    .sub { color: var(--text-muted); font-size: 17px; font-weight: 600; line-height: 1.6; max-width: 85%; }
 
-    .title { font-size: 28px; font-weight: 800; letter-spacing: 2px; font-family: "Poppins", sans-serif; }
-    .sub { color: var(--text-muted); font-size: 16px; font-weight: 600; line-height: 1.6; max-width: 80%; }
+    .right { display: flex; flex-direction: column; gap: 30px; align-items: center; justify-content: center; }
 
-    .right { 
-      display: flex; 
-      flex-direction: column; 
-      gap: 25px; 
-      align-items: center; 
-      justify-content: center; 
-    }
-
+    /* 3D Glass Countdown */
     .countdown { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; width: 100%; }
     
     .time-card {
-      width: 110px; height: 110px;
-      border-radius: 20px;
+      width: 115px; height: 120px;
+      border-radius: 22px;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
-      background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
-      border: 1px solid var(--glass-border);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3), inset 0 2px 5px rgba(255,255,255,0.1);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
     }
-    .time-card:hover { transform: translateY(-8px); border-color: rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.08); }
-    .time-num { font-size: 38px; font-weight: 800; font-family: "Poppins", sans-serif; background: linear-gradient(90deg, #fff, #ddd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .time-label { font-size: 14px; color: var(--text-muted); font-weight: 600; margin-top: 4px; }
+    .time-card::before {
+      content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent);
+      transform: skewX(-25deg); transition: 0.5s;
+    }
+    .time-card:hover { transform: translateY(-10px) scale(1.05); border-color: var(--accent-cyan); box-shadow: 0 20px 40px rgba(0, 230, 255, 0.2); }
+    .time-card:hover::before { left: 150%; }
 
+    .time-num { font-size: 42px; font-weight: 800; font-family: "Poppins", sans-serif; color: #fff; text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+    .time-label { font-size: 15px; color: var(--accent-cyan); font-weight: 700; margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* Controls */
     .controls { display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap; width: 100%; }
     
     .btn {
-      padding: 12px 24px;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--glass-border);
-      color: #fff;
-      font-family: inherit;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(5px);
+      padding: 12px 26px; border-radius: 16px;
+      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border);
+      color: #fff; font-family: inherit; font-size: 15px; font-weight: 700;
+      cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(5px);
     }
-    .btn:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-2px); }
+    .btn:hover { background: rgba(255, 255, 255, 0.15); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
     
     .btn.primary {
       background: linear-gradient(135deg, var(--accent-pink), var(--accent-cyan));
-      color: #000;
-      border: none;
-      box-shadow: 0 10px 25px rgba(255, 45, 149, 0.3);
+      background-size: 200% 200%;
+      color: #fff; border: none; text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      box-shadow: 0 10px 30px rgba(255, 45, 149, 0.4);
+      animation: gradientShift 4s ease infinite;
     }
-    .btn.primary:hover { box-shadow: 0 15px 35px rgba(0, 230, 255, 0.4); transform: translateY(-3px) scale(1.02); }
+    @keyframes gradientShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    .btn.primary:hover { box-shadow: 0 15px 40px rgba(0, 230, 255, 0.6); transform: translateY(-4px) scale(1.05); }
 
-    .track-info { width: 100%; text-align: center; font-weight: 600; color: var(--text-muted); font-size: 14px; margin-top: 10px; }
+    .track-info { width: 100%; text-align: center; font-weight: 700; color: #e2e8f0; font-size: 15px; margin-top: 10px; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
 
     .volBox { 
       display: flex; gap: 12px; align-items: center; 
-      background: rgba(0,0,0,0.2); padding: 10px 20px; border-radius: 50px; 
-      border: 1px solid var(--glass-border);
+      background: rgba(0,0,0,0.3); padding: 12px 24px; border-radius: 50px; 
+      border: 1px solid rgba(255,255,255,0.1); box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);
     }
-    .volBox label { font-size: 13px; font-weight: 600; color: var(--text-muted); }
-    input[type="range"] { accent-color: var(--accent-cyan); cursor: pointer; width: 120px; }
+    .volBox label { font-size: 14px; font-weight: 700; color: #fff; }
+    input[type="range"] { accent-color: var(--accent-pink); cursor: pointer; width: 130px; height: 6px; border-radius: 5px; }
 
-    /* Overlay Letter Styling */
+    /* Overlay Letter Styling (Premium Glass) */
     #initOverlay {
       position: fixed; inset: 0;
-      background: rgba(5, 11, 20, 0.85);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
+      background: rgba(3, 7, 18, 0.9);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       display: flex; align-items: center; justify-content: center;
-      z-index: 50;
-      padding: 20px;
+      z-index: 50; padding: 20px; transition: opacity 0.6s ease, visibility 0.6s ease;
     }
     
     #initOverlay .box {
-      width: 100%; max-width: 750px; max-height: 85vh;
-      padding: 40px;
-      border-radius: 24px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+      width: 100%; max-width: 780px; max-height: 85vh; padding: 45px;
+      border-radius: 30px;
+      background: linear-gradient(145deg, rgba(30, 35, 55, 0.7), rgba(15, 20, 35, 0.9));
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.9), 0 0 60px rgba(255, 45, 149, 0.15);
       display: flex; flex-direction: column; gap: 30px;
-      position: relative;
     }
 
     #initOverlay .box .letter-content {
-      overflow-y: auto;
-      padding-right: 15px; /* Space for scrollbar */
-      text-align: right;
-      line-height: 2;
-      font-size: 17px;
-      font-weight: 600;
-      color: #f0f0f0;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      overflow-y: auto; padding-right: 15px; padding-left: 10px;
+      text-align: right; line-height: 2.2; font-size: 18px; font-weight: 600;
+      color: #f8fafc; text-shadow: 0 2px 4px rgba(0,0,0,0.6);
     }
+    #initOverlay .box .letter-content p { margin-bottom: 18px; }
+    #initOverlay .box button { padding: 16px 40px; font-size: 20px; border-radius: 20px; }
+    #initOverlay .box button h3 { font-size: 20px; margin: 0; font-family: "Cairo", sans-serif; font-weight: 800; }
 
-    #initOverlay .box .letter-content p { margin-bottom: 15px; }
-
-    #initOverlay .box button h3 { font-size: 18px; margin: 0; font-family: "Cairo", sans-serif; font-weight: 800; }
-
+    /* Confetti & Balloons */
     #confetti, #balloonLayer { position: fixed; inset: 0; pointer-events: none; z-index: 20; }
-    
     .balloon {
       position: absolute; bottom: -220px;
       border-radius: 50% 50% 46% 46% / 60% 60% 40% 40%;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.45), inset 0 -10px 26px rgba(255,255,255,0.15);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.5), inset 0 -10px 26px rgba(255,255,255,0.2);
       display: flex; align-items: center; justify-content: center; transform-origin: center;
-      will-change: transform, opacity;
     }
     .wobble { animation: wobble 3.6s ease-in-out infinite; }
-    @keyframes wobble {
-      0% { transform: translateY(0) rotate(-3deg); }
-      50% { transform: translateY(-8px) rotate(4deg); }
-      100% { transform: translateY(0) rotate(-3deg); }
-    }
+    @keyframes wobble { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-8px) rotate(4deg); } }
 
     /* Responsive */
     @media (max-width: 980px) {
-      .card { grid-template-columns: 1fr; padding: 30px 20px; gap: 30px; }
-      .cake-ring { width: 240px; height: 240px; }
-      .time-card { width: 90px; height: 90px; }
-      .time-num { font-size: 28px; }
-      #initOverlay .box { padding: 25px 20px; }
-      #initOverlay .box .letter-content { font-size: 15px; }
+      .card { grid-template-columns: 1fr; padding: 35px 25px; gap: 35px; max-height: 90vh; overflow-y: auto; }
+      .cake-ring { width: 250px; height: 250px; }
+      .time-card { width: 95px; height: 100px; }
+      .time-num { font-size: 32px; }
+      #initOverlay .box { padding: 30px 20px; }
+      #initOverlay .box .letter-content { font-size: 16px; }
     }
     @media (max-width: 480px) {
       .countdown { gap: 10px; }
-      .time-card { width: 75px; height: 80px; }
-      .time-num { font-size: 22px; }
+      .time-card { width: 75px; height: 85px; border-radius: 16px; }
+      .time-num { font-size: 24px; }
       .time-label { font-size: 12px; }
-      .btn { padding: 10px 16px; font-size: 13px; }
+      .btn { padding: 10px 18px; font-size: 13px; }
       .volBox { flex-direction: column; padding: 15px; border-radius: 16px; }
+      .cake-ring { width: 220px; height: 220px; }
     }
   </style>
 </head>
 <body>
+
+  <!-- تأثيرات الخلفية -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
 
   <!-- شاشة البداية (الرسالة) -->
   <div id="initOverlay" aria-hidden="false">
@@ -290,16 +297,15 @@
 
       <div class="controls" role="toolbar" aria-label="متحكمات التشغيل">
         <button id="prevBtn" class="btn">⏮ السابق</button>
-        <button id="playBtn" class="btn primary">تشغيل القائمة</button>
-        <button id="pauseBtn" class="btn">إيقاف مؤقت</button>
+        <button id="playBtn" class="btn primary">إيقاف / تشغيل</button>
         <button id="nextBtn" class="btn">التالي ⏭</button>
-        <div class="track-info" id="trackInfo">قائمة الخلفية: (لم تُشغّل بعد)</div>
+        <div class="track-info" id="trackInfo">قائمة الخلفية: (جاري التحضير...)</div>
       </div>
 
-      <div class="controls">
+      <div class="controls" style="margin-top: 10px;">
         <div class="volBox">
           <label for="volRange">مستوى الصوت</label>
-          <input id="volRange" type="range" min="0" max="100" value="70">
+          <input id="volRange" type="range" min="0" max="100" value="80">
         </div>
         <button id="toggleBalloons" class="btn">إيقاف/تشغيل البالونات</button>
       </div>
@@ -316,81 +322,93 @@
     'https://www.dropbox.com/scl/fi/6t4sqpw6bh1j8dsfp3hmm/song2.mp3?rlkey=s182ogwzwb7nwi028znptooc5&st=wonbpd1b&dl=1'
   ];
 
-  const PLAYLIST_NAMES = ['سنة حلوة', 'سنة حلوة يا جميل']; // أسماء الأغاني الظاهرة
+  const PLAYLIST_NAMES = ['سنة حلوة', 'سنة حلوة يا جميل'];
 
-  const PARTY_AUDIO = 'https://www.dropbox.com/scl/fi/n2hm9kgrf89s8ih7ouyd2/song1.mp3?rlkey=ydw6ka7f255m9zdwifui1oh26&st=bxqf7vnz&dl=1';
-  const TARGET_STR = "2026-9-9 0:00:00";
+  // تعديل التاريخ ليكون 2026
+  const TARGET_STR = "2026-09-09T11:00:00"; 
 
   const daysEl = document.getElementById('days'), hoursEl = document.getElementById('hours'),
         minsEl = document.getElementById('minutes'), secsEl = document.getElementById('seconds');
 
   const prevBtn = document.getElementById('prevBtn'), playBtn = document.getElementById('playBtn'),
-        pauseBtn = document.getElementById('pauseBtn'), nextBtn = document.getElementById('nextBtn'),
-        trackInfo = document.getElementById('trackInfo'), volRange = document.getElementById('volRange'),
-        toggleBalloonsBtn = document.getElementById('toggleBalloons'),
+        nextBtn = document.getElementById('nextBtn'), trackInfo = document.getElementById('trackInfo'), 
+        volRange = document.getElementById('volRange'), toggleBalloonsBtn = document.getElementById('toggleBalloons'),
         initOverlay = document.getElementById('initOverlay'), initBtn = document.getElementById('initBtn');
 
   let currentIndex = 0, isPlaying = false;
   const bgAudio = document.getElementById('bgAudio');
   const partyAudio = document.getElementById('partyAudio');
 
+  // إجبار المتصفح على تحميل الأغاني فور فتح الموقع لمنع التأخير
+  bgAudio.load();
+  partyAudio.load();
+  bgAudio.volume = volRange.value / 100;
+  partyAudio.volume = volRange.value / 100;
+
   function updateTrackDisplay(){
-    trackInfo.textContent = 'قائمة الخلفية: ' + PLAYLIST_NAMES[currentIndex];
+    trackInfo.textContent = '🎶 يتم تشغيل: ' + PLAYLIST_NAMES[currentIndex];
   }
 
   function playCurrent(){
-    bgAudio.src = PLAYLIST[currentIndex];
-    bgAudio.volume = volRange.value/100;
-    bgAudio.play();
-    isPlaying = true;
-    updateTrackDisplay();
-    playBtn.textContent = 'قيد التشغيل';
+    if(bgAudio.src !== PLAYLIST[currentIndex]) {
+      bgAudio.src = PLAYLIST[currentIndex];
+    }
+    bgAudio.play().then(() => {
+      isPlaying = true;
+      updateTrackDisplay();
+      playBtn.textContent = 'إيقاف مؤقت ⏸';
+    }).catch(e => console.log("Audio Play Error:", e));
   }
 
   function pauseCurrent(){
     bgAudio.pause();
     isPlaying = false;
-    playBtn.textContent = 'تشغيل القائمة';
+    playBtn.textContent = 'تشغيل الأغنية ▶';
   }
 
   function nextTrack(){
     currentIndex = (currentIndex + 1) % PLAYLIST.length;
-    if(isPlaying) playCurrent(); else updateTrackDisplay();
+    playCurrent();
   }
 
   function prevTrack(){
     currentIndex = (currentIndex - 1 + PLAYLIST.length) % PLAYLIST.length;
-    if(isPlaying) playCurrent(); else updateTrackDisplay();
+    playCurrent();
   }
 
   playBtn.addEventListener('click', ()=>{ isPlaying ? pauseCurrent() : playCurrent(); });
-  pauseBtn.addEventListener('click', pauseCurrent);
   nextBtn.addEventListener('click', nextTrack);
   prevBtn.addEventListener('click', prevTrack);
+  
   volRange.addEventListener('input', ()=>{ 
-    const v = volRange.value/100; 
+    const v = volRange.value / 100; 
     bgAudio.volume = v; 
     partyAudio.volume = v; 
   });
 
-  function enableAudioContext(){
-    try{
+  // الدخول وتشغيل الأغنية فوراً
+  initBtn.addEventListener('click', ()=>{
+    try {
       const AC = window.AudioContext || window.webkitAudioContext;
       if(AC && !window.__audioCtx){
         window.__audioCtx = new AC();
-        if(window.__audioCtx.state==='suspended') window.__audioCtx.resume().catch(()=>{});
+        if(window.__audioCtx.state==='suspended') window.__audioCtx.resume();
       }
     } catch(e){}
-  }
-
-  initBtn.addEventListener('click', ()=>{
-    enableAudioContext();
-    initOverlay.style.display='none';
-    balloonsStart();
+    
+    // تأثير الإخفاء الناعم
+    initOverlay.style.opacity = '0';
+    setTimeout(() => {
+      initOverlay.style.display = 'none';
+      balloonsStart();
+      // تشغيل الموسيقى فور الدخول
+      playCurrent(); 
+    }, 600);
   });
 
   const target = new Date(TARGET_STR).getTime();
   function pad(n){ return String(n).padStart(2,'0'); }
+  
   function tick(){
     const now = Date.now();
     const diff = target - now;
@@ -414,73 +432,63 @@
 
   function onCountdownEnd(){
     bgAudio.pause();
-    partyAudio.volume = volRange.value/100;
     partyAudio.play();
     burstConfetti();
     balloonsStart();
   }
 
+  // تأثيرات البالونات والاحتفال
   const balloonLayer = document.getElementById('balloonLayer');
-  const BAL_COLORS = ['#FF2D95','#00E6FF','#FFD166','#8AFFC1','#C57BFF','#FF9F43'];
+  const BAL_COLORS = ['#FF2D95','#00E6FF','#9d00ff','#8AFFC1','#C57BFF','#FFD166'];
   let balloonTimer = null;
 
   function createBalloon(){
     const b = document.createElement('div');
     b.className = 'balloon wobble';
-    const size = 56 + Math.random()*120;
+    const size = 60 + Math.random()*110;
     b.style.width = size+'px';
     b.style.height = Math.round(size*1.25)+'px';
-    b.style.left = (5 + Math.random()*88)+'%';
+    b.style.left = (5 + Math.random()*85)+'%';
     const color = BAL_COLORS[Math.floor(Math.random()*BAL_COLORS.length)];
-    b.style.background = `linear-gradient(180deg, ${color}, ${shadeColor(color,-12)})`;
-    b.style.opacity = 0.98;
+    b.style.background = `radial-gradient(circle at 30% 30%, ${color}, #111)`;
+    b.style.opacity = 0.9;
     balloonLayer.appendChild(b);
-    const duration = 9000 + Math.random()*14000;
+    const duration = 10000 + Math.random()*12000;
     const drift = (Math.random()*40-20);
     const rotate = (Math.random()*60-30);
     b.animate([
       { transform:`translateY(0) rotate(${Math.random()*8-4}deg)`, opacity:1 },
-      { transform:`translateY(-140vh) translateX(${drift}vw) rotate(${rotate}deg)`, opacity:0.95 }
-    ], { duration:duration, easing:'cubic-bezier(.2,.8,.2,1)' });
-    setTimeout(()=>{b.remove();}, duration+300);
+      { transform:`translateY(-130vh) translateX(${drift}vw) rotate(${rotate}deg)`, opacity:0 }
+    ], { duration:duration, easing:'ease-in-out' });
+    setTimeout(()=>{b.remove();}, duration);
   }
 
-  function shadeColor(hex, percent){
-    if(!hex.startsWith('#')) return hex;
-    const c = hex.replace('#','');
-    const num = parseInt(c,16);
-    let r = (num>>16) + percent; if(r>255) r=255; if(r<0) r=0;
-    let g = ((num>>8)&0x00FF) + percent; if(g>255) g=255; if(g<0) g=0;
-    let b = (num & 0x0000FF) + percent; if(b>255) b=255; if(b<0) b=0;
-    return '#' + ((r<<16)|(g<<8)|b).toString(16).padStart(6,'0');
-  }
-
-  function balloonsStart(){ if(balloonTimer) return; createBalloon(); balloonTimer=setInterval(createBalloon,620); }
+  function balloonsStart(){ if(balloonTimer) return; createBalloon(); balloonTimer=setInterval(createBalloon,800); }
   function balloonsStop(){ if(balloonTimer){ clearInterval(balloonTimer); balloonTimer=null; } }
 
   toggleBalloonsBtn.addEventListener('click', ()=>{
-    balloonTimer ? (balloonsStop(), toggleBalloonsBtn.textContent='تفعيل البالونات') : (balloonsStart(), toggleBalloonsBtn.textContent='إيقاف البالونات');
+    if(balloonTimer) { balloonsStop(); toggleBalloonsBtn.textContent='تفعيل البالونات'; }
+    else { balloonsStart(); toggleBalloonsBtn.textContent='إيقاف البالونات'; }
   });
 
   const confCanvas = document.getElementById('confetti'); 
   const ctx = confCanvas.getContext('2d');
-
   function resizeConf(){ confCanvas.width = innerWidth; confCanvas.height = innerHeight; }
   addEventListener('resize', resizeConf); resizeConf();
 
   let confetti = [];
   function burstConfetti(){
     confetti = [];
-    const colors = ['#ff2d95','#00e6ff','#ffd166','#8affc1','#C57BFF','#ff9f43'];
-    for(let i=0;i<260;i++){
+    const colors = ['#ff2d95','#00e6ff','#ffd166','#8affc1','#C57BFF','#9d00ff'];
+    for(let i=0;i<300;i++){
       confetti.push({
         x: Math.random()*confCanvas.width,
         y: Math.random()*-confCanvas.height,
-        size: 6+Math.random()*12,
+        size: 5+Math.random()*15,
         color: colors[Math.floor(Math.random()*colors.length)],
-        speed: 2+Math.random()*6,
+        speed: 3+Math.random()*6,
         tilt: Math.random()*Math.PI,
-        spin: (Math.random()*0.12)*(Math.random()>0.5?1:-1)
+        spin: (Math.random()*0.15)*(Math.random()>0.5?1:-1)
       });
     }
     requestAnimationFrame(runConfetti);
@@ -498,7 +506,7 @@
       ctx.fillStyle = p.color;
       ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*0.6);
       ctx.restore();
-      if(p.y>confCanvas.height+30) p.y=-10;
+      if(p.y>confCanvas.height+30) p.y=-20;
     });
     requestAnimationFrame(runConfetti);
   }
