@@ -2,233 +2,236 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title> 𝓝𝓸𝓸𝓻 𝓔𝓲𝓷 𝓑𝓪𝓫𝓪 🌚♥️ </title>
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1" />
+  <title>نور عين بابا 👑♥️</title>
   
-  <!-- خطوط فخمة جداً -->
+  <!-- خطوط ملكية فائقة الجمال -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Outfit:wght@700;900&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;800&family=Cinzel:wght@600;800&family=Reem+Kufi:wght@600&display=swap" rel="stylesheet">
   
   <style>
+    /* المتغيرات والألوان الفاخرة */
     :root {
-      --bg-deep: #0a0b16;
-      --pink-glow: #ff1b6b;
-      --cyan-glow: #00e5ff;
-      --gold-glow: #ffcc00;
-      --glass: rgba(20, 25, 40, 0.45);
-      --glass-border: rgba(255, 255, 255, 0.1);
-      --glass-light: rgba(255, 255, 255, 0.05);
+      --bg-void: #020203;
+      --bg-glow: radial-gradient(circle at 50% 30%, #15120e 0%, #020203 80%);
+      --gold-pure: #D4AF37;
+      --gold-light: #F9F1C8;
+      --gold-dark: #8C6D23;
+      --gold-grad: linear-gradient(135deg, #C59341 0%, #F9F1C8 50%, #8C6D23 100%);
+      --glass-dark: rgba(12, 12, 15, 0.5);
+      --glass-border: rgba(212, 175, 55, 0.2);
     }
     
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; overflow: hidden; background: var(--bg-deep); color: #fff; }
-    
-    body {
-      font-family: "Cairo", sans-serif;
-      display: flex; align-items: center; justify-content: center;
-      padding: 20px;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
+    html, body { height: 100%; overflow: hidden; background: var(--bg-void); color: #fff; }
+    body { font-family: "Cairo", sans-serif; background-image: var(--bg-glow); }
 
-    /* Magical Bokeh Background */
-    .magical-bg {
-      position: fixed; inset: 0; z-index: -2; overflow: hidden;
-      background: radial-gradient(circle at 50% 50%, #151025 0%, #0a0b16 100%);
-    }
-    .magical-bg::before, .magical-bg::after {
-      content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%;
-      filter: blur(100px); opacity: 0.4; animation: floatGlow 15s infinite alternate ease-in-out;
-    }
-    .magical-bg::before { background: var(--pink-glow); top: -200px; right: -200px; }
-    .magical-bg::after { background: var(--cyan-glow); bottom: -200px; left: -200px; animation-delay: -5s; }
-    
-    /* Fairy Lights / Stars */
-    .fairy-lights { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
-    .star {
-      position: absolute; background: #fff; border-radius: 50%;
-      box-shadow: 0 0 10px #fff, 0 0 20px var(--gold-glow);
-      animation: twinkle linear infinite;
-    }
-    @keyframes floatGlow { 100% { transform: translate(-100px, 100px) scale(1.2); } }
-    @keyframes twinkle { 0%, 100% { opacity: 0; transform: scale(0.5); } 50% { opacity: 1; transform: scale(1.5); } }
-
-    /* Custom Scrollbar */
+    /* شريط التمرير الفاخر */
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: linear-gradient(var(--pink-glow), var(--cyan-glow)); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb { background: var(--gold-grad); border-radius: 10px; }
 
-    /* --- Welcome Letter (Royal Glass) --- */
-    #welcome-screen {
-      position: fixed; inset: 0; z-index: 100;
-      background: rgba(10, 11, 22, 0.85); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-      display: flex; align-items: center; justify-content: center; padding: 20px;
-      transition: opacity 0.8s ease, visibility 0.8s ease;
+    /* تأثير الإضاءة المحيطية */
+    .ambient-light {
+      position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background: radial-gradient(circle at 10% 90%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+                  radial-gradient(circle at 90% 10%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
     }
-    .letter-card {
-      width: 100%; max-width: 800px; max-height: 85vh; padding: 50px 40px;
-      background: linear-gradient(135deg, rgba(30, 35, 55, 0.7), rgba(15, 18, 30, 0.9));
-      border-radius: 30px;
-      border: 1px solid var(--glass-border); border-top: 1px solid rgba(255,27,107,0.5);
-      box-shadow: 0 40px 100px rgba(0,0,0,0.9), inset 0 0 40px rgba(255,255,255,0.02);
+
+    /* --- شاشة الدخول (الرسالة الملكية) --- */
+    #welcome-modal {
+      position: fixed; inset: 0; z-index: 100;
+      background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+      display: flex; align-items: center; justify-content: center; padding: 20px;
+      transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    
+    .invite-envelope {
+      width: 100%; max-width: 800px; max-height: 90vh; padding: 50px;
+      background: var(--glass-dark); border-radius: 16px;
+      border: 1px solid var(--glass-border); box-shadow: 0 50px 100px rgba(0,0,0,0.9);
       display: flex; flex-direction: column; gap: 30px; position: relative;
     }
-    .letter-title {
-      font-family: 'Aref Ruqaa', serif; font-size: 38px; color: var(--gold-glow);
-      text-align: center; margin-bottom: 10px; text-shadow: 0 0 15px rgba(255,204,0,0.4);
-    }
-    .letter-content {
-      overflow-y: auto; padding: 0 15px; font-size: 19px; line-height: 2.2;
-      font-weight: 600; color: #f0f0f5; text-align: justify;
-    }
-    .letter-content p { margin-bottom: 20px; }
-    
-    .btn-enter {
-      margin: 0 auto; padding: 18px 50px; font-size: 22px; font-family: 'Cairo', sans-serif; font-weight: 800;
-      color: #fff; background: transparent; border: 2px solid transparent;
-      background-clip: padding-box; border-radius: 50px; position: relative; cursor: pointer;
-      box-shadow: 0 15px 30px rgba(255, 27, 107, 0.3); transition: 0.3s;
-    }
-    .btn-enter::before {
-      content: ''; position: absolute; inset: -2px; border-radius: 50px; z-index: -1;
-      background: linear-gradient(90deg, var(--pink-glow), var(--cyan-glow), var(--gold-glow), var(--pink-glow));
-      background-size: 300%; animation: gradientPan 3s linear infinite;
-    }
-    .btn-enter:hover { transform: scale(1.05); box-shadow: 0 20px 40px rgba(255, 27, 107, 0.5); }
-    @keyframes gradientPan { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
-
-    /* --- Main Masterpiece Layout --- */
-    .main-container {
-      width: min(100%, 1200px);
-      background: var(--glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border-radius: 40px; padding: 50px;
-      display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px;
-      border: 1px solid var(--glass-border);
-      box-shadow: 0 50px 100px rgba(0,0,0,0.6), inset 0 2px 20px rgba(255,255,255,0.05);
-      position: relative; z-index: 10;
+    .invite-envelope::before {
+      content: ''; position: absolute; inset: 12px; border: 1px dashed rgba(212, 175, 55, 0.3); border-radius: 8px; pointer-events: none;
     }
 
-    /* Left: Visuals & Creative Cake Ring */
-    .visual-wrapper { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; }
+    .invite-title {
+      font-family: 'Amiri', serif; font-size: 45px; text-align: center;
+      background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      line-height: 1.2; text-shadow: 0 4px 20px rgba(212, 175, 55, 0.2);
+    }
+
+    .invite-body {
+      overflow-y: auto; padding: 0 20px; font-size: 19px; line-height: 2.2;
+      font-weight: 400; color: #e2e2e5; text-align: justify; z-index: 2;
+    }
+    .invite-body p { margin-bottom: 20px; }
+    .invite-body p:first-child::first-letter { font-size: 45px; color: var(--gold-pure); font-family: 'Amiri', serif; }
+
+    .btn-unlock {
+      align-self: center; background: transparent; color: var(--gold-pure);
+      font-family: 'Reem Kufi', sans-serif; font-size: 22px; padding: 15px 60px;
+      border: 1px solid var(--gold-pure); border-radius: 50px; cursor: pointer;
+      position: relative; overflow: hidden; transition: 0.4s; z-index: 2;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.1); margin-top: 10px;
+    }
+    .btn-unlock::before {
+      content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+      background: var(--gold-grad); transition: 0.5s; z-index: -1;
+    }
+    .btn-unlock:hover { color: #000; border-color: transparent; box-shadow: 0 10px 40px rgba(212, 175, 55, 0.5); transform: translateY(-3px); }
+    .btn-unlock:hover::before { left: 0; }
+
+    /* --- الواجهة الرئيسية (Masterpiece Layout) --- */
+    .dashboard {
+      display: flex; align-items: center; justify-content: center; width: 100vw; height: 100vh;
+      opacity: 0; transform: scale(1.03); transition: all 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .dashboard.visible { opacity: 1; transform: scale(1); }
+
+    .split-layout {
+      width: min(100%, 1300px); display: flex; flex-direction: row; gap: 60px;
+      align-items: center; padding: 40px;
+    }
+
+    /* الجانب المرئي (يسار) */
+    .visual-panel { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 30px; }
     
-    .magic-ring {
-      position: relative; width: 320px; height: 320px;
+    .magic-frame {
+      width: 360px; height: 360px; border-radius: 50%; position: relative;
       display: flex; align-items: center; justify-content: center;
     }
-    /* Animated Gradient Border */
-    .magic-ring::before {
-      content: ''; position: absolute; inset: 0; border-radius: 50%;
-      background: conic-gradient(from 0deg, var(--pink-glow), transparent, var(--cyan-glow), transparent, var(--gold-glow), transparent, var(--pink-glow));
-      animation: spinRing 8s linear infinite; filter: blur(5px);
+    /* إطار ذهبي متحرك بعبقرية */
+    .magic-frame::before {
+      content: ''; position: absolute; inset: -5px; border-radius: 50%;
+      background: conic-gradient(from 0deg, var(--gold-dark), var(--gold-light), var(--gold-pure), var(--gold-dark));
+      animation: rotateFrame 6s linear infinite; filter: blur(2px);
     }
-    .magic-ring::after {
-      content: ''; position: absolute; inset: 8px; border-radius: 50%;
-      background: var(--bg-deep); z-index: 1;
-    }
-    @keyframes spinRing { 100% { transform: rotate(360deg); } }
-
-    .video-core {
-      position: relative; width: 290px; height: 290px; border-radius: 50%;
-      overflow: hidden; z-index: 2; box-shadow: 0 0 30px rgba(0,0,0,0.8);
-      border: 2px solid rgba(255,255,255,0.15);
-      animation: gentleFloat 4s ease-in-out infinite;
-    }
-    .video-core video { width: 100%; height: 100%; object-fit: cover; }
-    @keyframes gentleFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-
-    .titles { text-align: center; }
-    .titles h1 {
-      font-size: 42px; font-weight: 800; letter-spacing: 3px;
-      background: linear-gradient(to right, #fff, var(--cyan-glow));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      margin-bottom: 5px; text-shadow: 0 5px 15px rgba(0,229,255,0.3);
-    }
-    .titles p { font-size: 18px; color: #cbd5e1; font-weight: 600; }
-
-    /* Right: Interactive Glass UI */
-    .ui-wrapper { display: flex; flex-direction: column; justify-content: center; gap: 40px; }
-
-    /* 3D Countdown Blocks */
-    .countdown-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-    .time-cube {
-      flex: 1; min-width: 100px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.01));
-      border: 1px solid var(--glass-border); border-top: 1px solid rgba(255,255,255,0.2);
-      border-radius: 20px; padding: 25px 10px; text-align: center;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.4), inset 0 0 15px rgba(255,255,255,0.02);
-      backdrop-filter: blur(10px); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    .time-cube:hover { transform: translateY(-10px) scale(1.05); border-color: var(--pink-glow); box-shadow: 0 20px 40px rgba(255,27,107,0.2); }
-    .t-val { font-family: 'Outfit', sans-serif; font-size: 45px; font-weight: 900; line-height: 1; color: #fff; text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
-    .t-lbl { font-size: 14px; color: var(--gold-glow); font-weight: 700; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px; }
-
-    /* Elegant Music Controller */
-    .music-deck {
-      background: rgba(0,0,0,0.3); border-radius: 24px; padding: 25px;
-      border: 1px solid var(--glass-border); box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
-    }
-    .deck-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-    .track-name { font-size: 16px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 10px; }
-    .track-status { font-size: 13px; color: var(--cyan-glow); padding: 4px 12px; background: rgba(0,229,255,0.1); border-radius: 20px; }
+    .magic-frame::after { content: ''; position: absolute; inset: 2px; border-radius: 50%; background: var(--bg-void); }
+    @keyframes rotateFrame { 100% { transform: rotate(360deg); } }
     
-    .deck-controls { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
-    .c-btn {
-      background: var(--glass-light); border: 1px solid var(--glass-border); color: #fff;
-      padding: 12px 20px; border-radius: 12px; font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer; transition: 0.3s;
+    .video-inner {
+      width: 100%; height: 100%; border-radius: 50%; overflow: hidden; z-index: 2;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
     }
-    .c-btn:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
-    .c-btn.play {
-      background: linear-gradient(135deg, var(--pink-glow), var(--cyan-glow));
-      border: none; box-shadow: 0 10px 25px rgba(255, 27, 107, 0.4); padding: 12px 30px;
+    .video-inner video { width: 100%; height: 100%; object-fit: cover; }
+
+    .date-title {
+      font-family: 'Cinzel', serif; font-size: 50px; font-weight: 800; letter-spacing: 5px;
+      background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      text-shadow: 0 10px 30px rgba(212, 175, 55, 0.3); line-height: 1; margin-bottom: 10px;
     }
-    .c-btn.play:hover { box-shadow: 0 15px 35px rgba(0, 229, 255, 0.5); }
+    .date-sub { font-family: 'Amiri', serif; font-size: 22px; color: var(--gold-light); }
 
-    .vol-box { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); padding: 10px 15px; border-radius: 15px; }
-    input[type="range"] { accent-color: var(--pink-glow); cursor: pointer; width: 100px; height: 4px; }
+    /* الجانب التفاعلي (يمين) */
+    .content-panel { flex: 1.2; display: flex; flex-direction: column; gap: 45px; }
 
-    .tools { display: flex; justify-content: center; margin-top: 10px; }
-    .btn-fx { background: transparent; border: 1px dashed var(--glass-border); color: #a1a1aa; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-family: "Cairo"; font-weight: 600; transition: 0.3s; }
-    .btn-fx:hover { color: #fff; border-color: var(--gold-glow); }
-
-    /* Particles & Shiny 3D Balloons */
-    #fx-layer, #confetti { position: fixed; inset: 0; pointer-events: none; z-index: 50; }
-    .shiny-balloon {
-      position: absolute; bottom: -150px;
-      border-radius: 50% 50% 46% 46% / 60% 60% 40% 40%;
-      box-shadow: inset -10px -10px 20px rgba(0,0,0,0.5), inset 10px 10px 20px rgba(255,255,255,0.4), 0 10px 20px rgba(0,0,0,0.3);
-      display: flex; align-items: center; justify-content: center;
+    /* --- العداد (تصميم فخم جداً) --- */
+    .countdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; transition: opacity 0.5s; }
+    .cd-box {
+      background: linear-gradient(180deg, rgba(20,20,25,0.7) 0%, rgba(5,5,8,0.9) 100%);
+      border: 1px solid var(--glass-border); border-top: 1px solid rgba(255,255,255,0.15);
+      border-radius: 16px; padding: 30px 10px; text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6); position: relative;
     }
-    .shiny-balloon::after {
-      content: ''; position: absolute; bottom: -20px; width: 2px; height: 30px; background: rgba(255,255,255,0.3);
+    .cd-val { font-family: 'Cinzel', serif; font-size: 55px; font-weight: 800; color: #fff; line-height: 1; text-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+    .cd-lbl { font-size: 15px; color: var(--gold-pure); font-weight: 700; margin-top: 12px; letter-spacing: 1px; }
+
+    /* --- وضع الاحتفال (الرسالة التي تظهر بعد انتهاء العداد) --- */
+    #birthday-msg {
+      display: none; text-align: center; animation: popIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    @keyframes popIn { 0% { opacity: 0; transform: scale(0.5); } 100% { opacity: 1; transform: scale(1); } }
+    .bday-text {
+      font-family: 'Reem Kufi', sans-serif; font-size: 55px; color: #fff; line-height: 1.3;
+      text-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
+    }
+    .bday-text span { background: var(--gold-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+    /* --- شريط التحكم (The Premium Dock) --- */
+    .glass-dock {
+      background: rgba(15, 15, 20, 0.6); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border); border-radius: 20px;
+      padding: 25px 35px; display: flex; flex-direction: column; gap: 20px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.7), inset 0 2px 20px rgba(255,255,255,0.03);
+    }
+    
+    .dock-header { display: flex; justify-content: space-between; align-items: center; }
+    .now-playing { font-size: 18px; font-weight: 700; color: var(--gold-light); display: flex; align-items: center; gap: 12px; }
+    .equalizer { display: flex; gap: 3px; height: 15px; align-items: flex-end; }
+    .eq-bar { width: 3px; background: var(--gold-pure); border-radius: 2px; }
+    .eq-bar:nth-child(1) { animation: eq 0.8s infinite alternate; }
+    .eq-bar:nth-child(2) { animation: eq 0.5s infinite alternate 0.2s; }
+    .eq-bar:nth-child(3) { animation: eq 0.7s infinite alternate 0.4s; }
+    @keyframes eq { 0% { height: 20%; } 100% { height: 100%; } }
+    
+    .dock-controls { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-btn {
+      background: transparent; border: none; color: rgba(255,255,255,0.6);
+      font-size: 22px; cursor: pointer; transition: 0.3s; padding: 10px;
+    }
+    .nav-btn:hover { color: var(--gold-pure); }
+    .play-master {
+      width: 70px; height: 70px; border-radius: 50%; font-size: 24px;
+      background: var(--gold-grad); color: #000; border: none; cursor: pointer;
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4); transition: 0.4s; display: flex; align-items: center; justify-content: center;
+    }
+    .play-master:hover { transform: scale(1.1); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6); }
+
+    .slider-group { display: flex; align-items: center; gap: 15px; flex: 1; justify-content: flex-end; }
+    .custom-slider {
+      -webkit-appearance: none; width: 140px; height: 4px; border-radius: 2px;
+      background: rgba(255,255,255,0.1); outline: none;
+    }
+    .custom-slider::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%;
+      background: var(--gold-light); cursor: pointer; box-shadow: 0 0 15px var(--gold-pure);
     }
 
-    /* Responsive */
+    /* طبقات المؤثرات البصرية */
+    #confetti-canvas, #balloon-layer { position: fixed; inset: 0; pointer-events: none; z-index: 60; }
+    
+    /* فلاش الاحتفال */
+    #flash-overlay {
+      position: fixed; inset: 0; background: #fff; z-index: 200; pointer-events: none;
+      opacity: 0; transition: opacity 1.5s ease-out; display: none;
+    }
+
+    /* بالونات فويل واقعية */
+    .foil-bal {
+      position: absolute; bottom: -200px;
+      border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
+      box-shadow: inset -8px -8px 20px rgba(0,0,0,0.6), inset 8px 8px 30px rgba(255,255,255,0.6), 0 15px 30px rgba(0,0,0,0.5);
+    }
+    .foil-bal::after {
+      content: ''; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);
+      width: 2px; height: 40px; background: rgba(212, 175, 55, 0.5);
+    }
+
+    /* التجاوب */
     @media (max-width: 1024px) {
-      .main-container { grid-template-columns: 1fr; padding: 40px 25px; gap: 40px; max-height: 95vh; overflow-y: auto; }
-      .magic-ring { width: 260px; height: 260px; }
-      .video-core { width: 236px; height: 236px; }
-      .countdown-grid { gap: 15px; }
-      .time-cube { padding: 15px 5px; border-radius: 16px; }
-      .t-val { font-size: 35px; }
-      .letter-card { padding: 40px 25px; }
-      .letter-content { font-size: 16px; }
-    }
-    @media (max-width: 480px) {
-      .deck-controls { flex-wrap: wrap; justify-content: center; }
-      .vol-box { width: 100%; justify-content: center; }
+      .split-layout { flex-direction: column; padding: 30px 20px; gap: 40px; max-height: 100vh; overflow-y: auto; }
+      .magic-frame { width: 300px; height: 300px; }
+      .cd-val { font-size: 40px; }
+      .invite-envelope { padding: 40px 20px; }
+      .date-title { font-size: 40px; }
+      .glass-dock { padding: 20px; }
+      .bday-text { font-size: 40px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Magical Background Elements -->
-  <div class="magical-bg"></div>
-  <div class="fairy-lights" id="stars"></div>
+  <div class="ambient-light"></div>
+  <div id="flash-overlay"></div> <!-- فلاش الانتقال لوضع الاحتفال -->
 
-  <!-- Royal Welcome Letter -->
-  <div id="welcome-screen">
-    <div class="letter-card">
-      <h2 class="letter-title">إلى نور عيني</h2>
-      <div class="letter-content">
+  <!-- رسالة الترحيب -->
+  <div id="welcome-modal">
+    <div class="invite-envelope">
+      <h2 class="invite-title">إلى نور عيني</h2>
+      <div class="invite-body">
         <p>كل سنه وانتِ طيبه ي نور عين بابا، كل سنه وانتِ بنتي وحبيبتي وصحبتي واحلي حاجه حصلتلي ف حياتي. من امبارح وانا قاعد متوتر اوييييييييي واما النت عندك باظ كنت زعلان اوي لاني نفسي افرحك زي ما بتفرحيني بس الحمد لله ظبطت شويه اهه.</p>
         <p>تعبي بقي نقول كلمتين.. انا من اول يوم قلتلك فيه بحبك ي نونتي وانا حاسس احساس غريب اوييييييييي احساس عمري ما حسيته قبل كده.. عارفه لما تحبي حد اوييييييييي وتيجي تبصي تلاقي حد جمبك حنين اوييييييييي وجميل اوييييييييي.</p>
         <p>عارفه ي نونتي انا ساعات بحس ان انا اللي ابنك مش انتِ اللي بنتي.. حنيتك عليا ي نونتي متتقدرش ب كنوز الدنيا، زعلك عليا لما بزعل او بكون مضايق بالدنيا كلها. كل يوم ببقي فخور ب اختياري اكتر من الاول لاني مش بس اخترت شخص احبه ويحبني لا ده انا اخترت بنوته قمر قمر اوي كمان، حاجه كده زي نجمه نزله من السماء، حاجه متتقدرش ب فلوس الدنيا كلها.</p>
@@ -238,83 +241,81 @@
         <p>اوعي تزعلي ان اصحابك دول مبعتلكيش، تصدقي وتؤمني بالله انا نفسي يبعدوا عنك ولا حد فيهم ينطق معاكي كلمه عشان دول مش صحاب. بكره تقابلي ف الكليه ناس احسن منهم ميت مره اخلاقنا وكل حاجه، اتقربي من اللي اخلاقهم حلوه. انا بخاف عليكي اوييييييييي وبغير عليكي اويييييييييي نونتي.. بغير عليكي اويييييييييي ي رخمه اوعي ي نونتي تقفي مع ولد عنده 7 سنين حته هزعلك ها اوعي اوعي.</p>
         <p>بحبك ي نور عيني بحبك اوى.. طاب عامك وجميع اعوامك ي نور عيني، والسنه الجايه نكون بنحتفل مع بعض ويكون الدنيا كلها عارفه اللي بينا. بحبك اويييييييييي نورعين بابا بحبك اوييييييييي كل سنه وانتِ جمبي ومعايا وسندي ف دنيتي ومصدر فرحتي كل سنه وانتِ طيبه ي نور عين بابا والحاجه الحلوه اللي ف حياة بابا.</p>
       </div>
-      <button class="btn-enter" id="enter-btn">فتح الهدية 🎁</button>
+      <button class="btn-unlock" id="btn-enter">الـدخـول للاحـتفـال 👑</button>
     </div>
   </div>
 
-  <canvas id="confetti"></canvas>
-  <div id="fx-layer"></div>
-
-  <!-- Main Masterpiece Layout -->
-  <main class="main-container">
-    
-    <!-- Visuals (Left) -->
-    <section class="visual-wrapper">
-      <div class="magic-ring">
-        <div class="video-core">
-          <video src="1.mp4" autoplay muted loop playsinline></video>
-        </div>
-      </div>
-      <div class="titles">
-        <h1>9 - 9</h1>
-        <p>عيد ميلاد رفيقة دربي وعمري</p>
-      </div>
-    </section>
-
-    <!-- Interactive UI (Right) -->
-    <section class="ui-wrapper">
+  <!-- التصميم الأساسي -->
+  <main class="dashboard" id="main-dash">
+    <div class="split-layout">
       
-      <!-- 3D Countdown -->
-      <div class="countdown-grid">
-        <div class="time-cube"><div class="t-val" id="days">00</div><div class="t-lbl">أيام</div></div>
-        <div class="time-cube"><div class="t-val" id="hours">00</div><div class="t-lbl">ساعات</div></div>
-        <div class="time-cube"><div class="t-val" id="minutes">00</div><div class="t-lbl">دقائق</div></div>
-        <div class="time-cube"><div class="t-val" id="seconds">00</div><div class="t-lbl">ثواني</div></div>
-      </div>
-
-      <!-- Music Deck -->
-      <div class="music-deck">
-        <div class="deck-info">
-          <span class="track-name" id="track-name">🎵 جاري التجهيز...</span>
-          <span class="track-status" id="track-status">متوقف</span>
-        </div>
-        <div class="deck-controls">
-          <button class="c-btn" id="btn-prev">⏮</button>
-          <button class="c-btn play" id="btn-play">تشغيل ▶</button>
-          <button class="c-btn" id="btn-next">⏭</button>
-          <div class="vol-box">
-            <span>🔊</span>
-            <input type="range" id="vol-slider" min="0" max="100" value="80">
+      <!-- اليسار: المرئيات -->
+      <section class="visual-panel">
+        <div class="magic-frame">
+          <div class="video-inner">
+            <video id="vid-layer" src="1.mp4" muted loop playsinline></video>
           </div>
         </div>
-      </div>
+        <div style="text-align: center;">
+          <h1 class="date-title">9 - 9</h1>
+          <p class="date-sub">عيد ميلاد رفيقة دربي وعمري</p>
+        </div>
+      </section>
 
-      <div class="tools">
-        <button class="btn-fx" id="toggle-fx">🎈 إيقاف/تشغيل بالونات الحفلة</button>
-      </div>
-    </section>
-    
+      <!-- اليمين: التفاعل -->
+      <section class="content-panel">
+        
+        <!-- العداد -->
+        <div class="countdown-grid" id="cd-container">
+          <div class="cd-box"><div class="cd-val" id="days">00</div><div class="cd-lbl">أيام</div></div>
+          <div class="cd-box"><div class="cd-val" id="hours">00</div><div class="cd-lbl">ساعات</div></div>
+          <div class="cd-box"><div class="cd-val" id="minutes">00</div><div class="cd-lbl">دقائق</div></div>
+          <div class="cd-box"><div class="cd-val" id="seconds">00</div><div class="cd-lbl">ثواني</div></div>
+        </div>
+
+        <!-- رسالة الاحتفال (مخفية حتى ينتهي العداد) -->
+        <div id="birthday-msg">
+          <h2 class="bday-text">كل سنة وأنتِ طيبة يا<br><span>نـور عـين بـابـا</span> 🎉</h2>
+        </div>
+
+        <!-- شريط التحكم الفخم -->
+        <div class="glass-dock">
+          <div class="dock-header">
+            <div class="now-playing">
+              <span id="track-name">🎵 جاري التجهيز...</span>
+              <div class="equalizer" id="eq-bars" style="display:none;">
+                <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+              </div>
+            </div>
+            <button style="background:transparent;border:none;color:var(--text-muted);cursor:pointer;text-decoration:underline;font-family:'Cairo';" id="toggle-fx">الزينة</button>
+          </div>
+          
+          <div class="dock-controls">
+            <div style="display:flex; gap:15px; align-items:center;">
+              <button class="nav-btn" id="btn-prev">⏮</button>
+              <button class="play-master" id="btn-play">▶</button>
+              <button class="nav-btn" id="btn-next">⏭</button>
+            </div>
+            <div class="slider-group">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-pure)" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+              <input type="range" class="custom-slider" id="vol-slider" min="0" max="100" value="80">
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
   </main>
 
+  <canvas id="confetti-canvas"></canvas>
+  <div id="balloon-layer"></div>
+
+  <!-- الصوتيات -->
   <audio id="bgAudio" src="https://www.dropbox.com/scl/fi/ljl2jx0rdpadn7smacozj/party.mp3?rlkey=0yddwekvxioiy4mr6u54ar1d9&st=rhdigu0j&dl=1" preload="auto"></audio>
   <audio id="partyAudio" src="https://www.dropbox.com/scl/fi/n2hm9kgrf89s8ih7ouyd2/song1.mp3?rlkey=ydw6ka7f255m9zdwifui1oh26&st=bxqf7vnz&dl=1" preload="auto"></audio>
 
   <script>
-  // Generate Stars
-  const starsContainer = document.getElementById('stars');
-  for(let i=0; i<50; i++){
-    let star = document.createElement('div');
-    star.className = 'star';
-    star.style.width = Math.random()*4 + 'px';
-    star.style.height = star.style.width;
-    star.style.left = Math.random()*100 + 'vw';
-    star.style.top = Math.random()*100 + 'vh';
-    star.style.animationDuration = (Math.random()*3 + 2) + 's';
-    star.style.animationDelay = Math.random()*2 + 's';
-    starsContainer.appendChild(star);
-  }
-
-  // Audio Logic
+  // إعدادات المسارات
   const PLAYLIST = [
     'https://www.dropbox.com/scl/fi/ljl2jx0rdpadn7smacozj/party.mp3?rlkey=0yddwekvxioiy4mr6u54ar1d9&st=rhdigu0j&dl=1',
     'https://www.dropbox.com/scl/fi/6t4sqpw6bh1j8dsfp3hmm/song2.mp3?rlkey=s182ogwzwb7nwi028znptooc5&st=wonbpd1b&dl=1'
@@ -324,57 +325,102 @@
 
   const bgAudio = document.getElementById('bgAudio');
   const partyAudio = document.getElementById('partyAudio');
+  const mainVideo = document.getElementById('vid-layer');
   const playBtn = document.getElementById('btn-play');
   const trackName = document.getElementById('track-name');
-  const trackStatus = document.getElementById('track-status');
+  const eqBars = document.getElementById('eq-bars');
+  
+  let currentTrack = 0, isPlaying = false, isBirthdayMode = false;
 
-  let currentTrack = 0, isPlaying = false;
-
-  bgAudio.load(); partyAudio.load();
+  // التحميل المسبق
+  bgAudio.load(); partyAudio.load(); mainVideo.load();
   bgAudio.volume = partyAudio.volume = 0.8;
 
   function updateUI() {
-    trackName.innerHTML = `🎵 ${PLAYLIST_NAMES[currentTrack]}`;
-    trackStatus.textContent = isPlaying ? 'شغال' : 'متوقف';
-    playBtn.innerHTML = isPlaying ? 'إيقاف ⏸' : 'تشغيل ▶';
+    if(isBirthdayMode) {
+      trackName.innerHTML = `🎉 احتفال عيد الميلاد`;
+    } else {
+      trackName.innerHTML = `🎵 ${PLAYLIST_NAMES[currentTrack]}`;
+    }
+    playBtn.innerHTML = isPlaying ? '⏸' : '▶';
+    eqBars.style.display = isPlaying ? 'flex' : 'none';
   }
 
-  function togglePlay() {
-    if(bgAudio.src !== PLAYLIST[currentTrack]) bgAudio.src = PLAYLIST[currentTrack];
-    if(isPlaying) { bgAudio.pause(); isPlaying = false; }
-    else { bgAudio.play().then(()=>{ isPlaying=true; }).catch(e=>console.log(e)); }
+  function toggleMedia() {
+    let activeAudio = isBirthdayMode ? partyAudio : bgAudio;
+    
+    if(!isBirthdayMode && bgAudio.src !== PLAYLIST[currentTrack]) {
+      bgAudio.src = PLAYLIST[currentTrack];
+    }
+    
+    if(isPlaying) { 
+      activeAudio.pause(); mainVideo.pause(); isPlaying = false; 
+    } else { 
+      activeAudio.play().catch(e=>{}); mainVideo.play().catch(e=>{}); isPlaying = true; 
+    }
     updateUI();
   }
 
-  playBtn.onclick = togglePlay;
-  document.getElementById('btn-next').onclick = () => { currentTrack = (currentTrack + 1) % PLAYLIST.length; isPlaying=false; togglePlay(); };
-  document.getElementById('btn-prev').onclick = () => { currentTrack = (currentTrack - 1 + PLAYLIST.length) % PLAYLIST.length; isPlaying=false; togglePlay(); };
+  playBtn.onclick = toggleMedia;
+  document.getElementById('btn-next').onclick = () => { if(!isBirthdayMode){ currentTrack = (currentTrack + 1) % PLAYLIST.length; isPlaying=false; toggleMedia(); } };
+  document.getElementById('btn-prev').onclick = () => { if(!isBirthdayMode){ currentTrack = (currentTrack - 1 + PLAYLIST.length) % PLAYLIST.length; isPlaying=false; toggleMedia(); } };
   document.getElementById('vol-slider').oninput = (e) => { bgAudio.volume = partyAudio.volume = e.target.value / 100; };
 
-  // Entrance & Unlock Audio
-  document.getElementById('enter-btn').onclick = () => {
+  // الدخول
+  document.getElementById('btn-enter').onclick = () => {
     const actx = window.AudioContext || window.webkitAudioContext;
     if(actx) { new actx().resume(); }
     
-    document.getElementById('welcome-screen').style.opacity = '0';
+    document.getElementById('welcome-modal').style.opacity = '0';
     setTimeout(() => {
-      document.getElementById('welcome-screen').style.display = 'none';
-      startBalloons();
-      if(!isPlaying) togglePlay(); // Zero delay start
+      document.getElementById('welcome-modal').style.display = 'none';
+      document.getElementById('main-dash').classList.add('visible');
+      if(!isPlaying) toggleMedia();
+      startBalloons(false);
     }, 800);
   };
 
-  // 3D Countdown
-  const target = new Date(TARGET_DATE).getTime();
+  // --- لحظة الصفر (الاحتفال العظيم) ---
+  function triggerBirthdayFestivities() {
+    if(isBirthdayMode) return;
+    isBirthdayMode = true;
+    
+    // فلاش الانتقال
+    const flash = document.getElementById('flash-overlay');
+    flash.style.display = 'block';
+    flash.style.opacity = '1';
+    
+    setTimeout(() => {
+      // إخفاء العداد وإظهار الرسالة
+      document.getElementById('cd-container').style.display = 'none';
+      document.getElementById('birthday-msg').style.display = 'block';
+      
+      // التبديل للأغنية الاحتفالية فوراً
+      bgAudio.pause();
+      partyAudio.currentTime = 0;
+      isPlaying = false; 
+      toggleMedia(); // يشغل partyAudio والمشهد
+
+      // زيادة الاحتفاليات للحد الأقصى
+      startBalloons(true);
+      continuousConfetti();
+      
+      flash.style.opacity = '0';
+      setTimeout(()=> flash.style.display = 'none', 1500);
+    }, 300);
+  }
+
+  // نظام العداد
+  const targetTime = new Date(TARGET_DATE).getTime();
   const dEl=document.getElementById('days'), hEl=document.getElementById('hours'), mEl=document.getElementById('minutes'), sEl=document.getElementById('seconds');
   const pad = n => String(n).padStart(2,'0');
 
   function tick(){
-    const diff = target - Date.now();
+    const diff = targetTime - Date.now();
     if(diff <= 0){
       clearInterval(timer);
-      dEl.textContent = hEl.textContent = mEl.textContent = sEl.textContent = '00';
-      bgAudio.pause(); partyAudio.play(); burstConfetti(); startBalloons(true); return;
+      triggerBirthdayFestivities();
+      return;
     }
     dEl.textContent = pad(Math.floor(diff/(1000*60*60*24)));
     hEl.textContent = pad(Math.floor((diff % (1000*60*60*24)) / (1000*60*60)));
@@ -383,62 +429,76 @@
   }
   const timer = setInterval(tick, 1000); tick();
 
-  // Shiny 3D Balloons
-  const fxLayer = document.getElementById('fx-layer');
+  // البالونات الفاخرة
+  const bLayer = document.getElementById('balloon-layer');
   let bTimer = null;
-  const B_COLORS = ['#ff1b6b', '#00e5ff', '#ffcc00', '#a200ff', '#ff0055'];
+  const F_COLORS = [
+    'radial-gradient(circle at 30% 30%, #FCF6BA 0%, #D4AF37 50%, #4a3a0c 100%)', // Gold
+    'radial-gradient(circle at 30% 30%, #ffd1dc 0%, #b76e79 50%, #4a2931 100%)', // Rose Gold
+    'radial-gradient(circle at 30% 30%, #ffffff 0%, #dcdcdc 50%, #555555 100%)'  // Silver/Pearl
+  ];
 
-  function createBalloon(){
+  function spawnFoilBalloon(){
     const b = document.createElement('div');
-    b.className = 'shiny-balloon';
-    const size = 60 + Math.random()*70;
-    b.style.width = size+'px'; b.style.height = (size*1.25)+'px';
+    b.className = 'foil-bal';
+    const size = 70 + Math.random()*80;
+    b.style.width = size+'px'; b.style.height = (size*1.2)+'px';
     b.style.left = (5 + Math.random()*85)+'%';
-    const color = B_COLORS[Math.floor(Math.random()*B_COLORS.length)];
-    // 3D Shiny Gradient
-    b.style.background = `radial-gradient(circle at 35% 35%, #fff 5%, ${color} 40%, #111 100%)`;
-    fxLayer.appendChild(b);
+    b.style.background = F_COLORS[Math.floor(Math.random()*F_COLORS.length)];
+    bLayer.appendChild(b);
     
     b.animate([
-      { transform: `translateY(0) rotate(${Math.random()*15-7}deg)`, opacity: 0.9 },
-      { transform: `translateY(-120vh) translateX(${Math.random()*50-25}vw) rotate(${Math.random()*30-15}deg)`, opacity: 0 }
+      { transform: `translateY(0) rotate(${Math.random()*20-10}deg)`, opacity: 1 },
+      { transform: `translateY(-140vh) translateX(${Math.random()*80-40}px) rotate(${Math.random()*40-20}deg)`, opacity: 0 }
     ], { duration: 12000 + Math.random()*8000, easing: 'ease-in-out' }).onfinish = () => b.remove();
   }
 
   function startBalloons(intensive=false){ 
-    if(!bTimer) bTimer = setInterval(createBalloon, intensive ? 500 : 1200); 
+    if(bTimer) clearInterval(bTimer);
+    bTimer = setInterval(spawnFoilBalloon, intensive ? 400 : 2000); 
   }
   document.getElementById('toggle-fx').onclick = () => {
-    if(bTimer){ clearInterval(bTimer); bTimer=null; } else { startBalloons(); }
+    if(bTimer){ clearInterval(bTimer); bTimer=null; } else { startBalloons(isBirthdayMode); }
   };
 
-  // Confetti Fireworks
-  const cvs = document.getElementById('confetti'); const ctx = cvs.getContext('2d');
-  const rz = () => { cvs.width = innerWidth; cvs.height = innerHeight; };
-  window.addEventListener('resize', rz); rz();
+  // نظام كونفيتي مستمر (الأمطار الذهبية)
+  const cvs = document.getElementById('confetti-canvas'); const ctx = cvs.getContext('2d');
+  const resizeCv = () => { cvs.width = window.innerWidth; cvs.height = window.innerHeight; };
+  window.addEventListener('resize', resizeCv); resizeCv();
   let conf = [];
+  let isConfettiActive = false;
   
-  function burstConfetti(){
-    conf = [];
-    for(let i=0; i<350; i++){
-      conf.push({
-        x: Math.random()*cvs.width, y: Math.random()*-cvs.height,
-        s: 6+Math.random()*12, c: B_COLORS[Math.floor(Math.random()*B_COLORS.length)],
-        sp: 3+Math.random()*6, t: Math.random()*Math.PI, rot: (Math.random()*0.1)*(Math.random()>0.5?1:-1)
-      });
-    }
-    requestAnimationFrame(renderConf);
+  function continuousConfetti(){
+    if(isConfettiActive) return;
+    isConfettiActive = true;
+    const cColors = ['#D4AF37', '#F9F1C8', '#8C6D23', '#b76e79', '#ffffff'];
+    
+    // توليد مبدئي
+    for(let i=0; i<250; i++) addConfettiParticle(cColors);
+    
+    // استمرار التوليد
+    setInterval(() => { if(conf.length < 400) addConfettiParticle(cColors, true); }, 100);
+    requestAnimationFrame(renderConfetti);
+  }
+
+  function addConfettiParticle(colors, topOnly=false){
+    conf.push({
+      x: Math.random()*cvs.width, y: topOnly ? -20 : Math.random()*-cvs.height,
+      s: 6+Math.random()*12, c: colors[Math.floor(Math.random()*colors.length)],
+      sp: 4+Math.random()*6, t: Math.random()*Math.PI, rot: (Math.random()*0.1)*(Math.random()>0.5?1:-1)
+    });
   }
   
-  function renderConf(){
+  function renderConfetti(){
     ctx.clearRect(0,0,cvs.width,cvs.height);
-    conf.forEach(p => {
-      p.y += p.sp; p.x += Math.sin(p.y*0.02)*2; p.t += p.rot;
+    for(let i=0; i<conf.length; i++){
+      let p = conf[i];
+      p.y += p.sp; p.x += Math.sin(p.y*0.01)*2; p.t += p.rot;
       ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.t); ctx.fillStyle = p.c;
-      ctx.fillRect(-p.s/2, -p.s/2, p.s, p.s*0.6); ctx.restore();
-      if(p.y > cvs.height+30) p.y = -20;
-    });
-    requestAnimationFrame(renderConf);
+      ctx.fillRect(-p.s/2, -p.s/2, p.s, p.s*0.5); ctx.restore();
+      if(p.y > cvs.height+30) { conf.splice(i, 1); i--; } // مسح الجزيئات اللي نزلت عشان الأداء
+    }
+    if(isConfettiActive) requestAnimationFrame(renderConfetti);
   }
 </script>
 </body>
