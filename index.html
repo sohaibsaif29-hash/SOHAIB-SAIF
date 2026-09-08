@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -7,67 +7,213 @@
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <!-- استخدام خط Cairo الاحترافي للغة العربية -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+  
   <style>
-    :root{
-      --bg1:#04101b; --accent1:#ff2d95; --accent2:#00e6ff; --glass: rgba(255,255,255,0.06);
+    :root {
+      --bg-dark: #050b14;
+      --accent-pink: #ff2d95;
+      --accent-cyan: #00e6ff;
+      --glass-bg: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --text-main: #ffffff;
+      --text-muted: rgba(255, 255, 255, 0.65);
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{
-      font-family:"Poppins",system-ui,Segoe UI,Arial;
-      background:
-        radial-gradient(900px 400px at 10% 10%, rgba(255,45,149,0.04), transparent),
-        radial-gradient(700px 350px at 90% 90%, rgba(0,230,255,0.03), transparent),
-        linear-gradient(180deg,#071023,#04101b);
-      color:#fff; display:flex; align-items:center; justify-content:center; padding:24px; overflow:hidden;
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    
+    body {
+      font-family: "Cairo", "Poppins", system-ui, sans-serif;
+      background: 
+        radial-gradient(circle at 15% 50%, rgba(255, 45, 149, 0.08), transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(0, 230, 255, 0.08), transparent 40%),
+        #050b14;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow: hidden;
+      direction: rtl;
     }
 
-    .card{
-      width:min(98%,1100px);
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:18px; padding:22px; display:grid; grid-template-columns:420px 1fr; gap:20px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.6); position:relative; z-index:3; border:1px solid rgba(255,255,255,0.03);
+    /* Custom Scrollbar for professional look */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.4); }
+
+    .card {
+      width: min(100%, 1150px);
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 40px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+      position: relative;
+      z-index: 3;
+      border: 1px solid var(--glass-border);
     }
 
-    .left{ text-align:center; display:flex; flex-direction:column; gap:12px; align-items:center; }
-    .cake-ring{ width:280px;height:280px;border-radius:50%; display:flex;align-items:center;justify-content:center;
-                background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-                box-shadow: 0 18px 40px rgba(0,0,0,0.6); position:relative; overflow:visible; }
-    .cake{ width:240px;height:240px;border-radius:50%; overflow:hidden; border:1px solid rgba(255,255,255,0.04);
-           box-shadow: 0 8px 30px rgba(0,0,0,0.55), 0 0 40px rgba(255,45,149,0.06); animation:float 3.6s ease-in-out infinite; }
-    .cake video{ width:100%; height:100%; object-fit:cover; display:block; border-radius:50%; }
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-    .title{ font-size:22px; font-weight:700; }
-    .sub{ color:rgba(255,255,255,0.78); font-size:14px; }
+    .left { 
+      text-align: center; 
+      display: flex; 
+      flex-direction: column; 
+      gap: 20px; 
+      align-items: center; 
+      justify-content: center;
+    }
 
-    .right{ display:flex; flex-direction:column; gap:14px; align-items:center; justify-content:center; }
-    .countdown{ display:flex; gap:16px; flex-wrap:wrap; justify-content:center; }
-    .time-card{ width:150px; height:120px; border-radius:14px; padding:12px; display:flex; flex-direction:column; align-items:center; justify-content:center;
-                background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.035);
-                box-shadow: 0 10px 30px rgba(0,0,0,0.45); transition: transform .25s ease; }
-    .time-card:hover{ transform: translateY(-6px); }
-    .time-num{ font-size:40px; font-weight:800; }
-    .time-label{ font-size:13px; color:rgba(255,255,255,0.85); margin-top:6px; }
+    .cake-ring {
+      width: 290px; height: 290px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, rgba(255, 45, 149, 0.1), rgba(0, 230, 255, 0.1));
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      position: relative;
+      padding: 10px;
+    }
+    .cake-ring::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      padding: 2px;
+      background: linear-gradient(45deg, var(--accent-pink), var(--accent-cyan));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      opacity: 0.5;
+    }
 
-    .controls{ display:flex; gap:10px; align-items:center; justify-content:center; flex-wrap:wrap; margin-top:8px; }
-    .btn{ padding:10px 14px; border-radius:12px; background:var(--glass); border:1px solid rgba(255,255,255,0.035); cursor:pointer; font-weight:700; }
-    .btn.primary{ background: linear-gradient(90deg,var(--accent1),var(--accent2)); color:#04101b; border:none; box-shadow: 0 12px 36px rgba(255,45,149,0.09); }
-    .track-info{ min-width:260px; text-align:center; font-weight:600; color:rgba(255,255,255,0.95); }
+    .cake {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      animation: float 4s ease-in-out infinite;
+    }
+    .cake video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
 
-    .volBox{ display:flex; gap:8px; align-items:center; }
-    input[type="range"]{ width:140px; }
+    .title { font-size: 28px; font-weight: 800; letter-spacing: 2px; font-family: "Poppins", sans-serif; }
+    .sub { color: var(--text-muted); font-size: 16px; font-weight: 600; line-height: 1.6; max-width: 80%; }
 
-    #initOverlay{ position:fixed; inset:0; background:linear-gradient(180deg, rgba(4,16,27,0.6), rgba(4,16,27,0.85)); display:flex; align-items:center; justify-content:center; z-index:40; }
-    #initOverlay .box{ padding:22px; border-radius:12px; text-align:center; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.04) }
+    .right { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 25px; 
+      align-items: center; 
+      justify-content: center; 
+    }
 
-    #confetti, #balloonLayer{ position:fixed; inset:0; pointer-events:none; z-index:20; }
+    .countdown { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; width: 100%; }
+    
+    .time-card {
+      width: 110px; height: 110px;
+      border-radius: 20px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(10px);
+    }
+    .time-card:hover { transform: translateY(-8px); border-color: rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.08); }
+    .time-num { font-size: 38px; font-weight: 800; font-family: "Poppins", sans-serif; background: linear-gradient(90deg, #fff, #ddd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .time-label { font-size: 14px; color: var(--text-muted); font-weight: 600; margin-top: 4px; }
+
+    .controls { display: flex; gap: 12px; align-items: center; justify-content: center; flex-wrap: wrap; width: 100%; }
+    
+    .btn {
+      padding: 12px 24px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--glass-border);
+      color: #fff;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+    .btn:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-2px); }
+    
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-cyan));
+      color: #000;
+      border: none;
+      box-shadow: 0 10px 25px rgba(255, 45, 149, 0.3);
+    }
+    .btn.primary:hover { box-shadow: 0 15px 35px rgba(0, 230, 255, 0.4); transform: translateY(-3px) scale(1.02); }
+
+    .track-info { width: 100%; text-align: center; font-weight: 600; color: var(--text-muted); font-size: 14px; margin-top: 10px; }
+
+    .volBox { 
+      display: flex; gap: 12px; align-items: center; 
+      background: rgba(0,0,0,0.2); padding: 10px 20px; border-radius: 50px; 
+      border: 1px solid var(--glass-border);
+    }
+    .volBox label { font-size: 13px; font-weight: 600; color: var(--text-muted); }
+    input[type="range"] { accent-color: var(--accent-cyan); cursor: pointer; width: 120px; }
+
+    /* Overlay Letter Styling */
+    #initOverlay {
+      position: fixed; inset: 0;
+      background: rgba(5, 11, 20, 0.85);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 50;
+      padding: 20px;
+    }
+    
+    #initOverlay .box {
+      width: 100%; max-width: 750px; max-height: 85vh;
+      padding: 40px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+      display: flex; flex-direction: column; gap: 30px;
+      position: relative;
+    }
+
+    #initOverlay .box .letter-content {
+      overflow-y: auto;
+      padding-right: 15px; /* Space for scrollbar */
+      text-align: right;
+      line-height: 2;
+      font-size: 17px;
+      font-weight: 600;
+      color: #f0f0f0;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    #initOverlay .box .letter-content p { margin-bottom: 15px; }
+
+    #initOverlay .box button h3 { font-size: 18px; margin: 0; font-family: "Cairo", sans-serif; font-weight: 800; }
+
+    #confetti, #balloonLayer { position: fixed; inset: 0; pointer-events: none; z-index: 20; }
+    
     .balloon {
-      position:absolute;
-      bottom:-220px;
-      border-radius:50% 50% 46% 46% / 60% 60% 40% 40%;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.45), inset 0 -10px 26px rgba(255,255,255,0.06);
-      display:flex; align-items:center; justify-content:center; transform-origin:center;
+      position: absolute; bottom: -220px;
+      border-radius: 50% 50% 46% 46% / 60% 60% 40% 40%;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.45), inset 0 -10px 26px rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center; transform-origin: center;
       will-change: transform, opacity;
     }
     .wobble { animation: wobble 3.6s ease-in-out infinite; }
@@ -77,17 +223,42 @@
       100% { transform: translateY(0) rotate(-3deg); }
     }
 
-    @media (max-width:980px){ .card{ grid-template-columns: 1fr; } .cake-ring{ width:220px;height:220px } }
+    /* Responsive */
+    @media (max-width: 980px) {
+      .card { grid-template-columns: 1fr; padding: 30px 20px; gap: 30px; }
+      .cake-ring { width: 240px; height: 240px; }
+      .time-card { width: 90px; height: 90px; }
+      .time-num { font-size: 28px; }
+      #initOverlay .box { padding: 25px 20px; }
+      #initOverlay .box .letter-content { font-size: 15px; }
+    }
+    @media (max-width: 480px) {
+      .countdown { gap: 10px; }
+      .time-card { width: 75px; height: 80px; }
+      .time-num { font-size: 22px; }
+      .time-label { font-size: 12px; }
+      .btn { padding: 10px 16px; font-size: 13px; }
+      .volBox { flex-direction: column; padding: 15px; border-radius: 16px; }
+    }
   </style>
 </head>
 <body>
 
+  <!-- شاشة البداية (الرسالة) -->
   <div id="initOverlay" aria-hidden="false">
     <div class="box">
-      <p>  كل سنه وانتِ طيبه ي نور عين بابا كل سنه وانتِ بنتي وحبيبتي وصحبتي واحلي حاجه حصلتلي ف حياتي من امبارح وانا قاعد متوتر اوييييييييي واما النت عندك باظ كنت زعلان اوي لاني نفسي افرحك زي ما بتفرحيني بس الحمد لله ظبطت شويه اهه تعبي بقي نقول كلمتين انا من اول يوم قلتلك فيه بحبك ي نونتي وانا حاسس احساس غريب اوييييييييي احساس عمري ما حسيته قبل كده عارفه لما تحبي حد اوييييييييي وتيجي تبصي تلاقي حد جمبك حنين اوييييييييي وجميل اوييييييييي عارفه ي نونتي انا ساعات بحس ان انا اللي ابنك مش انتِ اللي بنتي حنيتك عليا ي نونتي متتقدرش ب كنوز الدنيا زعلك عليا لما بزعل او بكون مضايق بالدنيا كلها كل يوم ببقي فخور ب اختياري اكتر من الاول لاني مش بس اخترت شخص احبه ويحبني لا ده انا اخترت بنوته قمر قمر  اوي كمان حاجه كده زي نجمه نزله من السماء حاجه متتقدرش ب فلوس الدنيا كلها بحبك اوييييييييي اوييييييييي واثق ان اهلي هيحبوكي اكتر مني كمان عشان عمرهم ما هيلاقوا قمر كده ولا حد يخاف ع ابنهم قد نونتي كل يوم بيزيد حبي ليكي ي نونتي كل يوم ببقي فخور اكتر ب حبي ليكي طول عمر بسمع ان البعيد عن العين بعيد عن القلب بس انتِ عمرك ما بعدتي عن قلبي دايما اما بعمل اي حاجهاو افكر ف اي حاجه بشوف هتزعلك ولا لا ولو هتزعلك عمري ما بقدر اعملها لما بحس انك مضايقه من حاجه حته لو عاديه بتقفل منها ومبقاش عايز اعملها انتِ بنتي ي نونتي بنتي وحبيبتي وباذن الله باذن الله ام عيالي اوعي تفكري ان قلبي يخشه غيرك ولا اني اقدر احب غيرك انتِ عندي بالدنيا كلها ومهما انشغلتي عمري ف حياتي ما اقدر ابص ل غيرك انتِ ماليه عيني ودنيتي وقلبي عمر عيني ما تقدر تشوف غيرك انتِ الدنيا كلها انا بعشقك نور عيني بعشقك اوييييييييي اوعي تزعلي ان اصحابك دول مبعتلكيش ف تزعلي تصدقي وتؤمني بالله انا نفسي يبعدوا عنك ولا حد فيهم ينطق معاكي كلمه عشان دول مش صحاب بكره تقابلي ف الكليه ناس احسن منهم ميت مره اخلاقنا وكل حاجه اتقربي من اللي اخلاقهم حلوه انا بخاف عليكي اوييييييييي وبغير عليكي اويييييييييي نونتي بغير عليكي اويييييييييي ي رخمه اوعي ي نونتي تقفي مع ولد عنده 7 سنين حته هزعلك ها اوعي اوعي بحبك ي نور عيني بحبك اوى طاب عامك وجميع اعوامك ي نور عيني والسنه الجايه نكون بنحتفل مع بعض ويكون الدنيا كلها عارفه اللي بينا بحبك اويييييييييي نورعين بابا بحبك اوييييييييي كل سنه وانتِ جمبي ومعايا وسندي ف دنيتي ومصدر فرحتي كل سنه وانتِ طيبه ي نور عين بابا والحاجه الحلوه اللي ف حياة بابا<\p> 
-
-      <div style="margin-top:10px">
-        <button id="initBtn" class="btn primary"> <h3>عيد ميلاد بنتي </h3> </button>
+      <div class="letter-content">
+        <p>كل سنه وانتِ طيبه ي نور عين بابا، كل سنه وانتِ بنتي وحبيبتي وصحبتي واحلي حاجه حصلتلي ف حياتي. من امبارح وانا قاعد متوتر اوييييييييي واما النت عندك باظ كنت زعلان اوي لاني نفسي افرحك زي ما بتفرحيني بس الحمد لله ظبطت شويه اهه.</p>
+        <p>تعبي بقي نقول كلمتين.. انا من اول يوم قلتلك فيه بحبك ي نونتي وانا حاسس احساس غريب اوييييييييي احساس عمري ما حسيته قبل كده.. عارفه لما تحبي حد اوييييييييي وتيجي تبصي تلاقي حد جمبك حنين اوييييييييي وجميل اوييييييييي.</p>
+        <p>عارفه ي نونتي انا ساعات بحس ان انا اللي ابنك مش انتِ اللي بنتي.. حنيتك عليا ي نونتي متتقدرش ب كنوز الدنيا، زعلك عليا لما بزعل او بكون مضايق بالدنيا كلها. كل يوم ببقي فخور ب اختياري اكتر من الاول لاني مش بس اخترت شخص احبه ويحبني لا ده انا اخترت بنوته قمر قمر اوي كمان، حاجه كده زي نجمه نزله من السماء، حاجه متتقدرش ب فلوس الدنيا كلها.</p>
+        <p>بحبك اوييييييييي اوييييييييي، واثق ان اهلي هيحبوكي اكتر مني كمان عشان عمرهم ما هيلاقوا قمر كده ولا حد يخاف ع ابنهم قد نونتي. كل يوم بيزيد حبي ليكي ي نونتي، كل يوم ببقي فخور اكتر ب حبي ليكي. طول عمري بسمع ان البعيد عن العين بعيد عن القلب، بس انتِ عمرك ما بعدتي عن قلبي دايما.</p>
+        <p>اما بعمل اي حاجه او افكر ف اي حاجه بشوف هتزعلك ولا لا، ولو هتزعلك عمري ما بقدر اعملها. لما بحس انك مضايقه من حاجه حته لو عاديه بقفل منها ومبقاش عايز اعملها. انتِ بنتي ي نونتي.. بنتي وحبيبتي وباذن الله باذن الله ام عيالي.</p>
+        <p>اوعي تفكري ان قلبي يخشه غيرك ولا اني اقدر احب غيرك، انتِ عندي بالدنيا كلها ومهما انشغلتي عمري ف حياتي ما اقدر ابص ل غيرك، انتِ ماليه عيني ودنيتي وقلبي، عمر عيني ما تقدر تشوف غيرك.. انتِ الدنيا كلها انا بعشقك نور عيني بعشقك اوييييييييي.</p>
+        <p>اوعي تزعلي ان اصحابك دول مبعتلكيش، تصدقي وتؤمني بالله انا نفسي يبعدوا عنك ولا حد فيهم ينطق معاكي كلمه عشان دول مش صحاب. بكره تقابلي ف الكليه ناس احسن منهم ميت مره اخلاقنا وكل حاجه، اتقربي من اللي اخلاقهم حلوه. انا بخاف عليكي اوييييييييي وبغير عليكي اويييييييييي نونتي.. بغير عليكي اويييييييييي ي رخمه اوعي ي نونتي تقفي مع ولد عنده 7 سنين حته هزعلك ها اوعي اوعي.</p>
+        <p>بحبك ي نور عيني بحبك اوى.. طاب عامك وجميع اعوامك ي نور عيني، والسنه الجايه نكون بنحتفل مع بعض ويكون الدنيا كلها عارفه اللي بينا. بحبك اويييييييييي نورعين بابا بحبك اوييييييييي كل سنه وانتِ جمبي ومعايا وسندي ف دنيتي ومصدر فرحتي كل سنه وانتِ طيبه ي نور عين بابا والحاجه الحلوه اللي ف حياة بابا.</p>
+      </div>
+      <div style="display: flex; justify-content: center;">
+        <button id="initBtn" class="btn primary"><h3>الدخول للاحتفال 🎉</h3></button>
       </div>
     </div>
   </div>
@@ -96,14 +267,17 @@
   <div id="balloonLayer" aria-hidden="true"></div>
 
   <main class="card" role="main" aria-label="عداد عيد ميلاد">
+    
     <section class="left">
       <div class="cake-ring">
         <div class="cake">
           <video id="cakeVid" src="1.mp4" autoplay muted loop playsinline></video>
         </div>
       </div>
-      <div class="title"> 🎂 9 - 9 🎂</div>
-      <div class="sub"> عيد ميلاد من كانت لي رفيقة دربي وستبقى لي رفيقة عمري </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div class="title">🎂 9 - 9 🎂</div>
+        <div class="sub">عيد ميلاد من كانت لي رفيقة دربي وستبقى لي رفيقة عمري</div>
+      </div>
     </section>
 
     <section class="right" aria-live="polite">
@@ -119,7 +293,6 @@
         <button id="playBtn" class="btn primary">تشغيل القائمة</button>
         <button id="pauseBtn" class="btn">إيقاف مؤقت</button>
         <button id="nextBtn" class="btn">التالي ⏭</button>
-
         <div class="track-info" id="trackInfo">قائمة الخلفية: (لم تُشغّل بعد)</div>
       </div>
 
@@ -131,6 +304,7 @@
         <button id="toggleBalloons" class="btn">إيقاف/تشغيل البالونات</button>
       </div>
     </section>
+    
   </main>
 
   <audio id="bgAudio" src="https://www.dropbox.com/scl/fi/ljl2jx0rdpadn7smacozj/party.mp3?rlkey=0yddwekvxioiy4mr6u54ar1d9&st=rhdigu0j&dl=1" preload="auto"></audio>
@@ -138,7 +312,6 @@
 
   <script>
   const PLAYLIST = [
-    
     'https://www.dropbox.com/scl/fi/ljl2jx0rdpadn7smacozj/party.mp3?rlkey=0yddwekvxioiy4mr6u54ar1d9&st=rhdigu0j&dl=1',
     'https://www.dropbox.com/scl/fi/6t4sqpw6bh1j8dsfp3hmm/song2.mp3?rlkey=s182ogwzwb7nwi028znptooc5&st=wonbpd1b&dl=1'
   ];
@@ -333,7 +506,3 @@
 
 </body>
 </html>
-
-
-
-
