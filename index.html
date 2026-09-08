@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>نور عين بابا 🌸♥️</title>
   
   <!-- خطوط عربية رقيقة وفخمة جداً -->
@@ -23,7 +23,7 @@
     }
     
     * { box-sizing: border-box; margin: 0; padding: 0; outline: none; -webkit-tap-highlight-color: transparent; }
-    html, body { height: 100%; overflow: hidden; font-family: 'Cairo', sans-serif; background-color: var(--bg-color); color: var(--text-dark); }
+    html, body { height: 100%; width: 100%; overflow: hidden; font-family: 'Cairo', sans-serif; background-color: var(--bg-color); color: var(--text-dark); }
     
     /* --- خلفية متحركة ناعمة جداً --- */
     .bg-blobs {
@@ -76,30 +76,23 @@
 
     /* الإطار الزجاجي العريض */
     .glass-panel {
-      width: 100%; max-width: 1000px;
+      width: 100%; max-width: 1050px; height: 90vh; max-height: 800px;
       background: var(--glass-bg); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
       border: 2px solid var(--glass-border); border-radius: 40px;
       padding: 40px; box-shadow: 0 30px 60px rgba(0,0,0,0.08), 0 0 0 10px rgba(255,255,255,0.4);
-      display: flex; flex-direction: column; overflow: hidden; position: relative;
+      display: flex; flex-direction: row; gap: 40px; align-items: center; overflow: hidden; position: relative;
     }
 
-    /* --- قسم العداد والفيديو (جنب بعض) --- */
-    .split-layout {
-      display: flex; flex-direction: row; gap: 40px; align-items: center; width: 100%;
-      transition: opacity 0.8s ease;
-    }
-
-    /* اليمين: الفيديو */
+    /* اليمين: الفيديو (ثابت لا يختفي أبداً) */
     .video-side {
-      flex: 1; display: flex; justify-content: center;
+      flex: 1; display: flex; justify-content: center; align-items: center; height: 100%;
     }
     .video-wrapper {
-      width: 100%; max-width: 400px; aspect-ratio: 4/3;
+      width: 100%; max-width: 450px; aspect-ratio: 4/3;
       border-radius: 25px; padding: 10px; background: #fff;
       box-shadow: 0 20px 40px rgba(225, 29, 72, 0.15);
       position: relative;
     }
-    /* إطار ناعم متوهج */
     .video-wrapper::before {
       content: ''; position: absolute; inset: -2px; border-radius: 27px;
       background: linear-gradient(45deg, #fca5a5, #fbcfe8, #a7f3d0);
@@ -110,29 +103,51 @@
     .video-inner { width: 100%; height: 100%; border-radius: 18px; overflow: hidden; background: #000; }
     .video-inner video { width: 100%; height: 100%; object-fit: cover; }
 
-    /* اليسار: العداد والتحكم */
+    /* اليسار: المحتوى الديناميكي (يتغير من العداد للرسالة) */
     .content-side {
-      flex: 1.2; display: flex; flex-direction: column; gap: 35px; justify-content: center;
+      flex: 1.2; display: flex; flex-direction: column; gap: 20px; justify-content: center; height: 100%;
     }
-    .header-text h1 { font-family: 'El Messiri', serif; font-size: 38px; color: var(--primary-pink); margin-bottom: 5px; }
-    .header-text p { font-size: 16px; font-weight: 700; color: var(--text-gray); }
 
-    /* تصميم العداد (بدون إطارات مزعجة، أرقام طايرة رقيقة) */
+    /* --- وضع ما قبل الصفر (العداد) --- */
+    #countdown-view {
+      display: flex; flex-direction: column; gap: 30px; justify-content: center; flex: 1;
+      animation: fadeIn 1s ease;
+    }
+    .header-text h1 { font-family: 'El Messiri', serif; font-size: 42px; color: var(--primary-pink); margin-bottom: 5px; }
+    .header-text p { font-size: 18px; font-weight: 700; color: var(--text-gray); }
+
     .countdown-chic { display: flex; gap: 20px; }
     .time-unit { display: flex; flex-direction: column; align-items: center; }
     .time-val {
-      font-family: 'Amiri', serif; font-size: 55px; font-weight: 700; line-height: 1;
+      font-family: 'Amiri', serif; font-size: 60px; font-weight: 700; line-height: 1;
       background: linear-gradient(180deg, var(--primary-pink), #fb7185);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       text-shadow: 0 4px 10px rgba(225, 29, 72, 0.15);
     }
-    .time-lbl { font-size: 14px; font-weight: 800; color: #a1a1aa; text-transform: uppercase; margin-top: 8px; letter-spacing: 1px; }
+    .time-lbl { font-size: 15px; font-weight: 800; color: #a1a1aa; text-transform: uppercase; margin-top: 8px; letter-spacing: 1px; }
 
-    /* شريط الموسيقى (Floating Pill) */
+    /* --- وضع ما بعد الصفر (رسالة الاحتفال) --- */
+    #celebration-view {
+      display: none; flex-direction: column; gap: 15px; flex: 1; overflow: hidden;
+      animation: fadeIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+    @keyframes fadeIn { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+    
+    .celeb-header h2 { font-family: 'El Messiri', serif; font-size: 38px; color: var(--primary-pink); text-shadow: 0 2px 10px rgba(225,29,72,0.1); text-align: center; }
+    
+    .romantic-scroll {
+      flex: 1; overflow-y: auto; padding: 20px; background: rgba(255,255,255,0.6);
+      border-radius: 20px; border: 1px solid var(--soft-pink);
+      font-size: 18px; line-height: 2.2; font-weight: 600; color: #3f3f46; text-align: justify;
+    }
+    .romantic-scroll p { margin-bottom: 15px; }
+
+    /* --- شريط الموسيقى الثابت بالأسفل --- */
     .player-pill {
-      width: 100%; background: rgba(255,255,255,0.9); border-radius: 50px;
-      padding: 10px 25px; display: flex; align-items: center; justify-content: space-between; gap: 15px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.03); border: 1px solid var(--soft-pink);
+      width: 100%; background: rgba(255,255,255,0.95); border-radius: 50px;
+      padding: 12px 25px; display: flex; align-items: center; justify-content: space-between; gap: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05); border: 1px solid var(--soft-pink);
+      margin-top: auto; /* يظل بالأسفل دائماً */
     }
     .track-info { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 700; color: var(--text-dark); flex: 1; white-space: nowrap; overflow: hidden; }
     .eq { display: flex; gap: 3px; height: 14px; align-items: flex-end; }
@@ -140,7 +155,7 @@
     .eq span:nth-child(2) { animation-delay: 0.2s; } .eq span:nth-child(3) { animation-delay: 0.4s; }
     @keyframes eq { 0% { height: 20%; } 100% { height: 100%; } }
 
-    .ctrl-btns { display: flex; align-items: center; gap: 12px; }
+    .ctrl-btns { display: flex; align-items: center; gap: 15px; }
     .btn-icon { background: transparent; border: none; font-size: 18px; color: var(--text-gray); cursor: pointer; transition: 0.3s; }
     .btn-icon:hover { color: var(--primary-pink); }
     .btn-play {
@@ -157,35 +172,13 @@
       background: var(--primary-pink); cursor: pointer; box-shadow: 0 2px 5px rgba(225, 29, 72, 0.3);
     }
 
-    /* =========================================
-       3. لحظة الاحتفال (الرسالة تظهر بعد العداد)
-       ========================================= */
-    #celebration-section {
-      display: none; width: 100%; height: 100%; flex-direction: column; gap: 20px;
-      animation: fadeIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-    }
-    @keyframes fadeIn { 0% { opacity: 0; transform: scale(0.95) translateY(20px); } 100% { opacity: 1; transform: scale(1) translateY(0); } }
-    
-    .celeb-header { text-align: center; }
-    .celeb-header h2 { font-family: 'El Messiri', serif; font-size: 40px; color: var(--primary-pink); text-shadow: 0 2px 10px rgba(225,29,72,0.1); }
-    
-    /* سكرول الرسالة الرومانسي */
-    .romantic-scroll {
-      flex: 1; overflow-y: auto; padding: 20px; background: rgba(255,255,255,0.6);
-      border-radius: 20px; border: 1px solid var(--soft-pink);
-      font-size: 18px; line-height: 2.2; font-weight: 600; color: #3f3f46; text-align: justify;
-    }
-    .romantic-scroll p { margin-bottom: 15px; }
-
     /* طبقة الفلاش للانتقال */
     #flash-overlay {
       position: fixed; inset: 0; background: #fff; z-index: 200; pointer-events: none;
       opacity: 0; display: none; transition: opacity 1s;
     }
 
-    /* =========================================
-       4. البالونات والكونفيتي (مبهجة وراقية)
-       ========================================= */
+    /* البالونات والكونفيتي */
     #fx-canvas, #balloon-layer { position: fixed; inset: 0; pointer-events: none; z-index: 50; }
     .girly-bal {
       position: absolute; bottom: -200px;
@@ -198,17 +191,18 @@
       width: 1px; height: 40px; background: rgba(0,0,0,0.1);
     }
 
-    /* التجاوب مع الموبايل (تحويل من عرضي لطولي) */
+    /* التجاوب مع الموبايل (من عرضي إلى طولي) */
     @media (max-width: 900px) {
-      .glass-panel { padding: 30px 20px; border-radius: 30px; height: 90vh; }
-      .split-layout { flex-direction: column; gap: 25px; text-align: center; height: 100%; justify-content: center; }
+      .glass-panel { flex-direction: column; padding: 25px 20px; border-radius: 30px; height: 95vh; max-height: none; gap: 20px; overflow-y: auto; }
+      .video-side { flex: none; width: 100%; height: auto; }
       .video-wrapper { max-width: 320px; margin: 0 auto; aspect-ratio: 16/11; }
+      .content-side { flex: 1; gap: 15px; width: 100%; justify-content: flex-start; }
+      #countdown-view { gap: 20px; justify-content: flex-start; text-align: center; }
       .countdown-chic { justify-content: center; gap: 15px; }
       .time-val { font-size: 45px; }
-      .content-side { gap: 25px; flex: none; width: 100%; }
-      .player-pill { flex-direction: column; border-radius: 20px; gap: 12px; padding: 15px; }
-      .romantic-scroll { font-size: 16px; }
-      .celeb-header h2 { font-size: 32px; }
+      .player-pill { flex-direction: column; border-radius: 20px; gap: 12px; padding: 15px; margin-top: 10px; }
+      .romantic-scroll { font-size: 16px; padding: 15px; }
+      .celeb-header h2 { font-size: 28px; }
     }
   </style>
 </head>
@@ -220,7 +214,7 @@
     <div class="blob blob-2"></div>
   </div>
 
-  <!-- 1. شاشة الدخول (بسيطة جداً ومباشرة) -->
+  <!-- 1. شاشة الدخول -->
   <div id="intro-screen">
     <div class="intro-box">
       <h1 class="intro-title">نور عين بابا 🌸</h1>
@@ -230,24 +224,24 @@
 
   <div id="flash-overlay"></div>
 
-  <!-- 2. الواجهة الرئيسية (الإطار الزجاجي) -->
+  <!-- 2. الواجهة الرئيسية -->
   <main class="dashboard" id="main-ui">
     <div class="glass-panel">
       
-      <!-- الوضع الأول: قبل انتهاء العداد (فيديو + عداد) -->
-      <div class="split-layout" id="countdown-view">
-        
-        <!-- اليمين: الفيديو المستطيل الشيك -->
-        <div class="video-side">
-          <div class="video-wrapper">
-            <div class="video-inner">
-              <video id="vid-main" src="1.mp4" muted loop playsinline></video>
-            </div>
+      <!-- اليمين: الفيديو (ثابت لا يختفي أبداً) -->
+      <div class="video-side">
+        <div class="video-wrapper">
+          <div class="video-inner">
+            <video id="vid-main" src="1.mp4" muted loop playsinline></video>
           </div>
         </div>
+      </div>
 
-        <!-- اليسار: العداد والتحكم -->
-        <div class="content-side">
+      <!-- اليسار: المحتوى المتغير والمشغل -->
+      <div class="content-side">
+        
+        <!-- وضع العداد (قبل الصفر) -->
+        <div id="countdown-view">
           <div class="header-text">
             <h1>9 - 9 🎂</h1>
             <p>عيد ميلاد رفيقة دربي وعمري</p>
@@ -259,46 +253,53 @@
             <div class="time-unit"><div class="time-val" id="m-val">00</div><div class="time-lbl">دقائق</div></div>
             <div class="time-unit"><div class="time-val" id="s-val">00</div><div class="time-lbl">ثواني</div></div>
           </div>
+        </div>
 
-          <!-- شريط التحكم بالموسيقى -->
-          <div class="player-pill">
-            <div class="track-info">
-              <div class="eq" id="eq-ui" style="display:none;"><span></span><span></span><span></span></div>
-              <span id="track-name-ui">جاري التحضير...</span>
-            </div>
-            
-            <div class="ctrl-btns">
-              <button class="btn-icon" id="btn-prev">⏮</button>
-              <button class="btn-play" id="btn-play">▶</button>
-              <button class="btn-icon" id="btn-next">⏭</button>
-            </div>
-
-            <div class="vol-wrap">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-gray)" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-              <input type="range" id="vol-slider" min="0" max="100" value="80">
-            </div>
+        <!-- وضع الاحتفال (بعد الصفر) -->
+        <div id="celebration-view">
+          <div class="celeb-header">
+            <h2>كل سنة وأنتِ طيبة يا نور عين بابا 🎉</h2>
+          </div>
+          
+          <div class="romantic-scroll">
+            <p>كل سنه وانتِ طيبه يانور عين بابا، كل سنه وانتِ بنتي وحبيبتي وصحبتي وباذن الله قريب تبقي مراتي وام عيالي.</p>
+            <p>كل سنه وانتِ جمبي ومعايا وبير اسراري واللي بحب افضفضلها خالص خالص واللي اليوم عمره مكان حلو غير ب وجودها فيه، كل سنه وانتِ القمر اللي مالي عيني ومالي حياتي كلها.</p>
+            <p>مش عارف اقول اي في جمال نونتي وحلاوة نونتي.. اتكلم عن عيونها اللي من اول ما اشوفهم وانا بتسحر بيهم وببقي مش عايز اي حاجه في دنيتي غير اني ابصلهم بس وافضل اعاكس فيها، ولا خدودها القمر دي اللي بحب اويييييييييييييييييييييييي اقرصهم والعب فيهم، ولا حواجب العسل خالص خالص دي اللي بحب العب فيهم واقعد اساويهم، ولا عن جمال ضحكتها وجمال كل رياكشن بيطلع منها وبيخلي صهوبتها فرحان خالص خالص خالص.</p>
+            <p>ولا اتكلم عن جمال وجودها معايا وعن كل مره قابلتها فيها في الاربع مرات، وكل مره احساسها بيبقي اجمل واجمل بس عمره ما هيبقي جميل زي اول يوم شوفتها فيه.. كان احلي واجمل مره لان كان اول مقابله ل نونتي، اول مره اشوف القمر بتاعي واحس ب حبه واحس قد اي انا بحبه وبعشقه ونفسي اويييييييييييييييييييييييي احضنه اويييييييييييييييييييييييي وميطلعش من حضني خالص.</p>
+            <p>ولا عن جمال الباقي كله كله اللي مدوب حبيبها خالص خالص ومخليه تعبان خالص خالص وهيجي ياكلها خالص خالص.. كل سنه وانتِ الحاجه الحلوه اللي ربنا رزقني بيها وبيعوضني بيها عن اي حاجه وحشه، كل سنه وانتِ الدفي والجمال في حياة صهوبتك.</p>
+            <p>بحب اويييييييييييييييييييييييي ارخم عليكي وارزل وانغشها كده وتتقمص.. وياتي ياتي عليها لما بتتقمص كده بتبقي عايزه تتاكل خالص خالص كده.. ياتي ياتي ياناس بتبقي عسل اويييييييييييييييييييييييي وهي عمله مقموصه كده وعايزه تتاكل اكل، بحب يانونتي وافضل ارخم عليك وارزل عليك وه بهزر يانونتي.. مقدرش انا اشوف نونتي غير وهي فرحانه ومبسوطه وضحكتها ماليه عليا حياتي.</p>
+            <p>كل سنه وانتِ طيبه يانور عين صهوبتك، كل سنه وانتِ جمبي ومعايا وباذن الله قريب تبقي في حضني لاخر عمري.. بحبك اويييييييييييييييييييييييي يانونتي مش بحبك بس لا بعشقك ولا حته بعشقك بس انا بدمنك يانونتي، ادمان عمره ما يبقي لي علاج غير حضنك عشان حضنك ده ادمان تاني خالص خالص بس عمره برده ما ينسيني ادماني الاول بال بالعكس يزيده خالص خالص.</p>
+            <p>بحبك اويييييييييييييييييييييييي ياعيوني بحبك اويييييييييييييييييييييييي يانور ونن عين بابا بعشقك بعشقك اويييييييييييييييييييييييي يانونتي.</p>
           </div>
         </div>
-      </div>
 
-      <!-- الوضع الثاني: بعد انتهاء العداد (رسالة الاحتفال) -->
-      <div id="celebration-section">
-        <div class="celeb-header">
-          <h2>كل سنة وأنتِ طيبة يا نور عين بابا 🎉</h2>
-        </div>
-        
-        <div class="romantic-scroll">
-          <p>كل سنه وانتِ طيبه يانور عين بابا، كل سنه وانتِ بنتي وحبيبتي وصحبتي وباذن الله قريب تبقي مراتي وام عيالي.</p>
-          <p>كل سنه وانتِ جمبي ومعايا وبير اسراري واللي بحب افضفضلها خالص خالص واللي اليوم عمره مكان حلو غير ب وجودها فيه، كل سنه وانتِ القمر اللي مالي عيني ومالي حياتي كلها.</p>
-          <p>مش عارف اقول اي في جمال نونتي وحلاوة نونتي.. اتكلم عن عيونها اللي من اول ما اشوفهم وانا بتسحر بيهم وببقي مش عايز اي حاجه في دنيتي غير اني ابصلهم بس وافضل اعاكس فيها، ولا خدودها القمر دي اللي بحب اويييييييييييييييييييييييي اقرصهم والعب فيهم، ولا حواجب العسل خالص خالص دي اللي بحب العب فيهم واقعد اساويهم، ولا عن جمال ضحكتها وجمال كل رياكشن بيطلع منها وبيخلي صهوبتها فرحان خالص خالص خالص.</p>
-          <p>ولا اتكلم عن جمال وجودها معايا وعن كل مره قابلتها فيها في الاربع مرات، وكل مره احساسها بيبقي اجمل واجمل بس عمره ما هيبقي جميل زي اول يوم شوفتها فيه.. كان احلي واجمل مره لان كان اول مقابله ل نونتي، اول مره اشوف القمر بتاعي واحس ب حبه واحس قد اي انا بحبه وبعشقه ونفسي اويييييييييييييييييييييييي احضنه اويييييييييييييييييييييييي وميطلعش من حضني خالص.</p>
-          <p>ولا عن جمال الباقي كله كله اللي مدوب حبيبها خالص خالص ومخليه تعبان خالص خالص وهيجي ياكلها خالص خالص.. كل سنه وانتِ الحاجه الحلوه اللي ربنا رزقني بيها وبيعوضني بيها عن اي حاجه وحشه، كل سنه وانتِ الدفي والجمال في حياة صهوبتك.</p>
-          <p>بحب اويييييييييييييييييييييييي ارخم عليكي وارزل وانغشها كده وتتقمص.. وياتي ياتي عليها لما بتتقمص كده بتبقي عايزه تتاكل خالص خالص كده.. ياتي ياتي ياناس بتبقي عسل اويييييييييييييييييييييييي وهي عمله مقموصه كده وعايزه تتاكل اكل، بحب يانونتي وافضل ارخم عليك وارزل عليك وه بهزر يانونتي.. مقدرش انا اشوف نونتي غير وهي فرحانه ومبسوطه وضحكتها ماليه عليا حياتي.</p>
-          <p>كل سنه وانتِ طيبه يانور عين صهوبتك، كل سنه وانتِ جمبي ومعايا وباذن الله قريب تبقي في حضني لاخر عمري.. بحبك اويييييييييييييييييييييييي يانونتي مش بحبك بس لا بعشقك ولا حته بعشقك بس انا بدمنك يانونتي، ادمان عمره ما يبقي لي علاج غير حضنك عشان حضنك ده ادمان تاني خالص خالص بس عمره برده ما ينسيني ادماني الاول بال بالعكس يزيده خالص خالص.</p>
-          <p>بحبك اويييييييييييييييييييييييي ياعيوني بحبك اويييييييييييييييييييييييي يانور ونن عين بابا بعشقك بعشقك اويييييييييييييييييييييييي يانونتي.</p>
-        </div>
-      </div>
+        <!-- شريط الموسيقى الثابت -->
+        <div class="player-pill">
+          <div class="track-info">
+            <div class="eq" id="eq-ui" style="display:none;"><span></span><span></span><span></span></div>
+            <span id="track-name-ui">جاري التحضير...</span>
+          </div>
+          
+          <div class="ctrl-btns">
+            <button class="btn-icon" id="btn-prev">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+            </button>
+            <button class="btn-play" id="btn-play">
+              <svg id="icon-play" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <svg id="icon-pause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+            <button class="btn-icon" id="btn-next">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+            </button>
+          </div>
 
+          <div class="vol-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+            <input type="range" id="vol-slider" min="0" max="100" value="80">
+          </div>
+        </div>
+
+      </div>
     </div>
   </main>
 
@@ -325,9 +326,10 @@
   const mainVideo = document.getElementById('vid-main');
   
   const playBtn = document.getElementById('btn-play');
+  const iconPlay = document.getElementById('icon-play');
+  const iconPause = document.getElementById('icon-pause');
   const trackNameUI = document.getElementById('track-name-ui');
   const eqUI = document.getElementById('eq-ui');
-  const enterBtn = document.getElementById('enter-btn');
 
   let currentTrack = 0, isPlaying = false, isBirthdayMode = false;
   bgAudio.volume = partyAudio.volume = 0.8;
@@ -338,47 +340,94 @@
     } else {
       trackNameUI.innerHTML = `🎵 ${PLAYLIST_NAMES[currentTrack]}`;
     }
-    playBtn.innerHTML = isPlaying ? '⏸' : '▶';
-    eqUI.style.display = isPlaying ? 'flex' : 'none';
+    
+    if(isPlaying) {
+      iconPlay.style.display = 'none';
+      iconPause.style.display = 'block';
+      eqUI.style.display = 'flex';
+    } else {
+      iconPlay.style.display = 'block';
+      iconPause.style.display = 'none';
+      eqUI.style.display = 'none';
+    }
+  }
+
+  // --- البرمجة الدقيقة لتبديل وتشغيل الأغاني أوتوماتيكياً وتفاعلياً ---
+  function playCurrentTrack() {
+    let activeAudio = isBirthdayMode ? partyAudio : bgAudio;
+    
+    if(!isBirthdayMode && bgAudio.src !== PLAYLIST[currentTrack]) { 
+      bgAudio.src = PLAYLIST[currentTrack]; 
+    }
+    
+    activeAudio.play().then(() => {
+      isPlaying = true; updatePlayerUI();
+    }).catch(e => console.log("Audio block."));
+    
+    // تأكد من تشغيل الفيديو دائماً
+    mainVideo.play().catch(e=>{});
+  }
+
+  function pauseMedia() {
+    bgAudio.pause(); partyAudio.pause(); mainVideo.pause();
+    isPlaying = false; updatePlayerUI();
   }
 
   function toggleMedia() {
-    let activeAudio = isBirthdayMode ? partyAudio : bgAudio;
-    if(!isBirthdayMode && bgAudio.src !== PLAYLIST[currentTrack]) { bgAudio.src = PLAYLIST[currentTrack]; }
-    
-    if(isPlaying) {
-      activeAudio.pause(); mainVideo.pause(); isPlaying = false;
-    } else {
-      activeAudio.play().then(() => {
-        isPlaying = true; updatePlayerUI();
-      }).catch(e => console.log("Audio block."));
-      if(!isBirthdayMode) mainVideo.play().catch(e=>{});
-    }
-    updatePlayerUI();
+    if(isPlaying) pauseMedia(); else playCurrentTrack();
   }
 
   playBtn.onclick = toggleMedia;
-  document.getElementById('btn-next').onclick = () => { if(!isBirthdayMode){ currentTrack = (currentTrack + 1) % PLAYLIST.length; isPlaying=false; toggleMedia(); } };
-  document.getElementById('btn-prev').onclick = () => { if(!isBirthdayMode){ currentTrack = (currentTrack - 1 + PLAYLIST.length) % PLAYLIST.length; isPlaying=false; toggleMedia(); } };
-  document.getElementById('vol-slider').oninput = (e) => { bgAudio.volume = partyAudio.volume = e.target.value / 100; };
 
-  // --- الدخول وبدء التجربة ---
-  enterBtn.onclick = () => {
+  document.getElementById('btn-next').onclick = () => { 
+    if(!isBirthdayMode){ 
+      pauseMedia();
+      currentTrack = (currentTrack + 1) % PLAYLIST.length; 
+      playCurrentTrack(); 
+    } 
+  };
+  
+  document.getElementById('btn-prev').onclick = () => { 
+    if(!isBirthdayMode){ 
+      pauseMedia();
+      currentTrack = (currentTrack - 1 + PLAYLIST.length) % PLAYLIST.length; 
+      playCurrentTrack(); 
+    } 
+  };
+
+  // الانتقال التلقائي للأغنية التالية عند الانتهاء
+  bgAudio.addEventListener('ended', () => {
+    currentTrack = (currentTrack + 1) % PLAYLIST.length;
+    playCurrentTrack();
+  });
+  partyAudio.addEventListener('ended', () => {
+    partyAudio.currentTime = 0;
+    playCurrentTrack(); // Loop party song
+  });
+
+  document.getElementById('vol-slider').oninput = (e) => { 
+    bgAudio.volume = partyAudio.volume = e.target.value / 100; 
+  };
+
+  // --- الدخول وبدء التجربة فوراً بضغطة زر ---
+  document.getElementById('enter-btn').onclick = () => {
     const actx = window.AudioContext || window.webkitAudioContext;
     if(actx) { new actx().resume(); }
     
-    if(!isPlaying) toggleMedia();
+    // تشغيل الأغنية فوراً
+    playCurrentTrack();
 
     const screen = document.getElementById('intro-screen');
     screen.style.opacity = '0';
     setTimeout(() => {
       screen.style.display = 'none';
       document.getElementById('main-ui').classList.add('visible');
+      startBalloons(false); // بالونات هادية في البداية
     }, 800);
   };
 
   // ==========================================
-  // لحظة الصفر (الاحتفال والرسالة الطويلة)
+  // لحظة الصفر (الاحتفال والرسالة)
   // ==========================================
   function triggerCelebration() {
     if(isBirthdayMode) return;
@@ -391,18 +440,17 @@
       flash.style.opacity = '1';
       
       setTimeout(() => {
-        // إخفاء قسم العداد والفيديو، وإظهار قسم الاحتفال والرسالة
+        // إخفاء العداد وإظهار الرسالة دون المساس بالفيديو
         document.getElementById('countdown-view').style.display = 'none';
-        document.getElementById('celebration-section').style.display = 'flex';
+        document.getElementById('celebration-view').style.display = 'flex';
         
-        // تشغيل أغنية الاحتفال
-        bgAudio.pause();
+        // التبديل للأغنية الاحتفالية
+        pauseMedia();
         partyAudio.currentTime = 0;
-        isPlaying = false;
-        toggleMedia(); // يشغل الأغنية الثالثة
+        playCurrentTrack(); // يشغل الأغنية الثالثة
 
-        // تشغيل المؤثرات المبهجة
-        startBalloons();
+        // تشغيل المؤثرات המبهجة باستمرار
+        startBalloons(true);
         startConfetti();
 
         flash.style.opacity = '0';
@@ -430,7 +478,7 @@
   const timer = setInterval(tick, 1000); tick();
 
   // ==========================================
-  // البالونات الرقيقة
+  // البالونات الرقيقة المستمرة
   // ==========================================
   let bTimer = null;
   const bLayer = document.getElementById('balloon-layer');
@@ -452,13 +500,13 @@
     ], { duration: 8000 + Math.random()*4000, easing: 'linear' }).onfinish = () => b.remove();
   }
 
-  function startBalloons(){
+  function startBalloons(intensive=false){
     if(bTimer) clearInterval(bTimer);
-    bTimer = setInterval(spawnBalloon, 400);
+    bTimer = setInterval(spawnBalloon, intensive ? 400 : 1500);
   }
 
   // ==========================================
-  // الكونفيتي
+  // الكونفيتي المستمر
   // ==========================================
   const fxCv = document.getElementById('fx-canvas');
   const fxCtx = fxCv.getContext('2d');
