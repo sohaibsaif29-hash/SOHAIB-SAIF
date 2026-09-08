@@ -3,186 +3,173 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1" />
-  <title>نور عين بابا 🎂♥️</title>
+  <title>نور عين بابا 🌸♥️</title>
   
-  <!-- خطوط مبهجة جداً واحترافية -->
+  <!-- خطوط عربية ملكية وبناتية فاخرة -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Marhey:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=El+Messiri:wght@600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      /* ألوان الحفلة المبهجة */
-      --pink: #ff007f;
-      --cyan: #00f0ff;
-      --yellow: #ffea00;
-      --purple: #bd00ff;
-      --white-glass: rgba(255, 255, 255, 0.85);
-      --text-dark: #1e1e24;
-      --text-muted: #6c757d;
+      --girly-pink: #ff758c;
+      --girly-rose: #ff7eb3;
+      --girly-light: #fff0f3;
+      --gold-accent: #d4af37;
+      --glass-white: rgba(255, 255, 255, 0.85);
+      --text-main: #4a2e35;
+      --text-muted: #8c6d75;
     }
     
     * { box-sizing: border-box; margin: 0; padding: 0; outline: none; -webkit-tap-highlight-color: transparent; }
-    html, body { height: 100%; overflow: hidden; font-family: 'Cairo', sans-serif; color: var(--text-dark); }
+    html, body { height: 100%; overflow: hidden; font-family: 'Cairo', sans-serif; color: var(--text-main); }
     
-    /* خلفية الحفلة الملونة والمتحركة */
+    /* خلفية بناتي ناعمة وساحرة */
     body {
-      background: linear-gradient(45deg, #ffc3a0 0%, #ffafbd 100%);
+      background: linear-gradient(135deg, #fbcfe8 0%, #fdf2f8 50%, #fce7f3 100%);
       position: relative;
     }
-    .animated-bg {
-      position: fixed; inset: 0; z-index: -2;
-      background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-      animation: bgShift 10s ease-in-out infinite alternate;
+    .girly-glow {
+      position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background: radial-gradient(circle at 50% 20%, rgba(255, 182, 193, 0.6) 0%, transparent 60%);
     }
-    @keyframes bgShift { 0% { opacity: 0; } 100% { opacity: 1; } }
 
-    /* أشكال مبهجة طايرة في الخلفية */
-    .bg-shapes { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
-    .shape {
-      position: absolute; border-radius: 50%; filter: blur(50px); opacity: 0.5;
-      animation: floatShape 12s infinite alternate ease-in-out;
-    }
-    .shape1 { width: 40vw; height: 40vw; background: var(--pink); top: -10%; left: -10%; }
-    .shape2 { width: 35vw; height: 35vw; background: var(--cyan); bottom: -10%; right: -10%; animation-delay: -3s; }
-    .shape3 { width: 30vw; height: 30vw; background: var(--purple); top: 30%; left: 40%; animation-delay: -6s; }
-    @keyframes floatShape { 100% { transform: translate(50px, 50px) scale(1.1); } }
-
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-thumb { background: var(--pink); border-radius: 10px; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-thumb { background: var(--girly-pink); border-radius: 10px; }
 
     /* =========================================
-       1. شاشة الدخول (رسالة التهنئة الفخمة)
+       1. شاشة الدخول (رسالة بناتي رقيقة)
        ========================================= */
     #welcome-screen {
       position: fixed; inset: 0; z-index: 100;
-      background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+      background: rgba(255, 240, 243, 0.8); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       display: flex; align-items: center; justify-content: center; padding: 20px;
       transition: opacity 0.8s ease, visibility 0.8s;
     }
-    .letter-card {
-      width: 100%; max-width: 800px; max-height: 85vh; padding: 40px;
-      background: #ffffff; border-radius: 30px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.15), 0 0 0 8px rgba(255,255,255,0.5);
+    .girly-card {
+      width: 100%; max-width: 750px; max-height: 85vh; padding: 40px;
+      background: #ffffff; border-radius: 35px;
+      box-shadow: 0 25px 50px rgba(255, 117, 140, 0.15), 0 0 0 6px rgba(255, 255, 255, 0.8);
       display: flex; flex-direction: column; gap: 20px; position: relative;
+      border: 1px solid rgba(255, 182, 193, 0.4);
     }
-    .letter-title {
-      font-family: 'Marhey', cursive; font-size: 38px; color: var(--pink);
-      text-align: center; margin-bottom: 10px; text-shadow: 0 2px 4px rgba(255,0,127,0.2);
+    .girly-title {
+      font-family: 'El Messiri', serif; font-size: 38px; color: #d946ef;
+      text-align: center; margin-bottom: 5px; font-weight: 700;
     }
-    .letter-body {
-      overflow-y: auto; padding: 0 15px; font-size: 19px; line-height: 2.1;
-      font-weight: 600; color: #333; text-align: justify;
+    .girly-body {
+      overflow-y: auto; padding: 0 15px; font-size: 18px; line-height: 2.2;
+      font-weight: 600; color: #5a4a4f; text-align: justify;
     }
-    .letter-body p { margin-bottom: 15px; }
+    .girly-body p { margin-bottom: 15px; }
     
-    .btn-enter {
-      align-self: center; background: linear-gradient(45deg, var(--pink), var(--purple));
-      color: #fff; font-family: 'Marhey', cursive; font-size: 22px;
-      padding: 15px 50px; border: none; border-radius: 50px; cursor: pointer;
-      box-shadow: 0 10px 25px rgba(255, 0, 127, 0.4); transition: 0.3s;
+    .btn-girly-enter {
+      align-self: center; background: linear-gradient(135deg, #f472b6, #db2777);
+      color: #fff; font-family: 'El Messiri', serif; font-size: 20px; font-weight: 700;
+      padding: 14px 45px; border: none; border-radius: 50px; cursor: pointer;
+      box-shadow: 0 10px 25px rgba(219, 39, 119, 0.3); transition: 0.3s;
       display: flex; align-items: center; gap: 10px; margin-top: 10px;
     }
-    .btn-enter:hover:not(:disabled) { transform: translateY(-5px) scale(1.05); box-shadow: 0 15px 35px rgba(255, 0, 127, 0.6); }
-    .btn-enter:disabled { background: #ccc; box-shadow: none; cursor: not-allowed; }
-    .loader {
-      width: 20px; height: 20px; border: 3px solid rgba(255,255,255,0.4);
+    .btn-girly-enter:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(219, 39, 119, 0.5); }
+    .btn-girly-enter:disabled { background: #e5e7eb; color: #9ca3af; box-shadow: none; cursor: not-allowed; }
+    .spinner {
+      width: 18px; height: 18px; border: 3px solid rgba(255,255,255,0.4);
       border-top: 3px solid #fff; border-radius: 50%; animation: spin 1s linear infinite; display: none;
     }
-    .btn-enter:disabled .loader { display: block; }
+    .btn-girly-enter:disabled .spinner { display: block; border-top-color: #9ca3af; }
     @keyframes spin { 100% { transform: rotate(360deg); } }
 
     /* =========================================
-       2. الواجهة الرئيسية (الفيديو فوق والشاشة تحت)
+       2. الواجهة الرئيسية (التخطيط العمودي الفخم)
        ========================================= */
     .dashboard {
       width: 100%; height: 100%; display: flex; flex-direction: column;
-      align-items: center; justify-content: flex-start; padding: 30px 20px;
+      align-items: center; justify-content: flex-start; padding: 25px 20px;
       overflow-y: auto; overflow-x: hidden;
       opacity: 0; transform: translateY(20px); transition: all 1s ease;
     }
     .dashboard.visible { opacity: 1; transform: translateY(0); }
 
-    /* --- قسم الفيديو (الكيكة) بالأعلى --- */
-    .video-section {
+    /* --- قسم الفيديو (إطار تورتة/مرآة ذهبية بناتي) --- */
+    .cake-section {
       position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center;
-      margin-bottom: -30px; /* لدمج الفيديو مع الشاشة اللي تحته */
+      margin-bottom: -25px;
     }
-    .video-frame {
-      width: 300px; height: 300px; border-radius: 50%;
-      background: #fff; padding: 10px; position: relative;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    .cake-frame {
+      width: 270px; height: 270px; border-radius: 50%;
+      background: #fff; padding: 8px; position: relative;
+      box-shadow: 0 15px 35px rgba(219, 39, 119, 0.2);
+      border: 3px solid #f472b6;
     }
-    /* إطار مضيء بيلف حول الفيديو */
-    .video-frame::before {
-      content: ''; position: absolute; inset: -5px; border-radius: 50%;
-      background: conic-gradient(from 0deg, var(--pink), var(--cyan), var(--yellow), var(--purple), var(--pink));
-      animation: rotateGlow 5s linear infinite; filter: blur(5px); z-index: -1;
+    .cake-frame::before {
+      content: '🎂'; position: absolute; top: -10px; right: 20px; font-size: 35px; z-index: 5;
+      animation: bounceCake 2s infinite ease-in-out;
     }
-    .video-core { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; background: #000; }
-    .video-core video { width: 100%; height: 100%; object-fit: cover; }
-    @keyframes rotateGlow { 100% { transform: rotate(360deg); } }
+    @keyframes bounceCake { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
-    /* --- الشاشة الزجاجية (العداد والتحكم) بالأسفل --- */
-    .glass-screen {
-      width: 100%; max-width: 850px;
-      background: var(--white-glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border: 2px solid rgba(255,255,255,0.8); border-radius: 40px;
-      padding: 60px 40px 40px 40px; /* مسافة علوية عشان الفيديو */
-      box-shadow: 0 30px 60px rgba(0,0,0,0.1);
-      display: flex; flex-direction: column; align-items: center; gap: 30px;
+    .cake-core { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; background: #000; }
+    .cake-core video { width: 100%; height: 100%; object-fit: cover; }
+
+    /* --- الشاشة الزجاجية البناتية بالأسفل --- */
+    .girly-glass-board {
+      width: 100%; max-width: 800px;
+      background: var(--glass-white); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border: 2px solid rgba(255, 255, 255, 0.9); border-radius: 35px;
+      padding: 50px 35px 35px 35px;
+      box-shadow: 0 25px 50px rgba(255, 117, 140, 0.15);
+      display: flex; flex-direction: column; align-items: center; gap: 25px;
     }
 
-    .header-text { text-align: center; }
-    .header-text h1 { font-family: 'Marhey', cursive; font-size: 42px; color: var(--pink); margin-bottom: 5px; text-shadow: 0 2px 5px rgba(255,0,127,0.2); }
-    .header-text p { font-size: 18px; font-weight: 700; color: var(--text-muted); }
+    .board-header { text-align: center; }
+    .board-header h1 { font-family: 'El Messiri', serif; font-size: 38px; color: #db2777; margin-bottom: 2px; }
+    .board-header p { font-size: 16px; font-weight: 700; color: var(--text-muted); }
 
-    /* العداد المبهج */
-    .countdown-container { display: flex; gap: 20px; width: 100%; justify-content: center; }
+    /* العداد الرقيق */
+    .countdown-flex { display: flex; gap: 15px; width: 100%; justify-content: center; }
     .time-box {
-      flex: 1; min-width: 90px; background: #fff; border-radius: 20px;
-      padding: 20px 10px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-      border: 1px solid rgba(0,0,0,0.05); transition: 0.3s;
+      flex: 1; min-width: 85px; background: #fff; border-radius: 20px;
+      padding: 18px 10px; text-align: center; box-shadow: 0 8px 20px rgba(255, 182, 193, 0.3);
+      border: 1px solid rgba(255, 182, 193, 0.5); transition: 0.3s;
     }
-    .time-box:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(255,0,127,0.15); border-color: var(--pink); }
-    .num { font-size: 48px; font-weight: 900; color: var(--text-dark); line-height: 1; }
-    .lbl { font-size: 16px; font-weight: 700; color: var(--pink); margin-top: 8px; }
+    .time-box:hover { transform: translateY(-4px); border-color: #db2777; }
+    .num { font-size: 42px; font-weight: 700; color: #db2777; line-height: 1; font-family: 'El Messiri', serif; }
+    .lbl { font-size: 14px; font-weight: 700; color: var(--text-muted); margin-top: 6px; }
 
     /* رسالة الاحتفال لما العداد يصفر */
     #celebration-msg {
       display: none; text-align: center; width: 100%; animation: popIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     }
     @keyframes popIn { 0% { opacity: 0; transform: scale(0.5); } 100% { opacity: 1; transform: scale(1); } }
-    .celeb-text { font-family: 'Marhey', cursive; font-size: 40px; color: var(--text-dark); line-height: 1.4; }
-    .celeb-text span { color: var(--pink); font-size: 50px; text-shadow: 0 4px 10px rgba(255,0,127,0.3); display: block; margin-top: 10px; }
+    .celeb-text { font-family: 'El Messiri', serif; font-size: 36px; color: var(--text-main); line-height: 1.4; }
+    .celeb-text span { color: #db2777; font-size: 44px; display: block; margin-top: 8px; }
 
-    /* شريط التحكم بالموسيقى */
-    .player-bar {
-      width: 100%; max-width: 700px; background: #f8f9fa; border-radius: 25px;
-      padding: 15px 30px; display: flex; align-items: center; justify-content: space-between; gap: 20px;
-      box-shadow: inset 0 2px 10px rgba(0,0,0,0.05), 0 10px 20px rgba(0,0,0,0.05);
+    /* شريط الموسيقى الرقيق */
+    .player-strip {
+      width: 100%; max-width: 650px; background: #fff; border-radius: 22px;
+      padding: 14px 25px; display: flex; align-items: center; justify-content: space-between; gap: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03); border: 1px solid rgba(255, 182, 193, 0.3);
     }
-    .track-info { display: flex; align-items: center; gap: 12px; font-size: 18px; font-weight: 700; color: var(--text-dark); flex: 1; }
-    .eq { display: flex; gap: 4px; height: 18px; align-items: flex-end; }
-    .eq span { width: 4px; background: var(--pink); border-radius: 2px; animation: eqAnim 0.5s infinite alternate; }
+    .track-info { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 700; color: var(--text-main); flex: 1; }
+    .eq { display: flex; gap: 3px; height: 16px; align-items: flex-end; }
+    .eq span { width: 3px; background: #db2777; border-radius: 2px; animation: eqAnim 0.5s infinite alternate; }
     .eq span:nth-child(2) { animation-delay: 0.2s; } .eq span:nth-child(3) { animation-delay: 0.4s; }
     @keyframes eqAnim { 0% { height: 20%; } 100% { height: 100%; } }
 
-    .ctrl-btns { display: flex; align-items: center; gap: 15px; }
-    .btn-icon { background: transparent; border: none; font-size: 24px; color: var(--text-muted); cursor: pointer; transition: 0.3s; }
-    .btn-icon:hover { color: var(--pink); }
+    .ctrl-btns { display: flex; align-items: center; gap: 12px; }
+    .btn-icon { background: transparent; border: none; font-size: 20px; color: var(--text-muted); cursor: pointer; transition: 0.3s; }
+    .btn-icon:hover { color: #db2777; }
     .btn-play {
-      width: 55px; height: 55px; border-radius: 50%; background: linear-gradient(45deg, var(--pink), var(--purple));
-      color: #fff; font-size: 24px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 10px 20px rgba(255,0,127,0.4); transition: 0.3s;
+      width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #f472b6, #db2777);
+      color: #fff; font-size: 20px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 20px rgba(219, 39, 119, 0.4); transition: 0.3s;
     }
-    .btn-play:hover { transform: scale(1.1); box-shadow: 0 15px 30px rgba(255,0,127,0.6); }
+    .btn-play:hover { transform: scale(1.08); }
 
-    .vol-box { display: flex; align-items: center; gap: 10px; }
-    input[type="range"] { -webkit-appearance: none; width: 100px; height: 6px; background: #dee2e6; border-radius: 3px; }
+    .vol-box { display: flex; align-items: center; gap: 8px; }
+    input[type="range"] { -webkit-appearance: none; width: 85px; height: 5px; background: #fce7f3; border-radius: 3px; }
     input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%;
-      background: var(--pink); cursor: pointer; box-shadow: 0 2px 5px rgba(255,0,127,0.5);
+      -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%;
+      background: #db2777; cursor: pointer; box-shadow: 0 2px 5px rgba(219,39,119,0.4);
     }
 
     /* طبقة الفلاش للانتقال */
@@ -192,51 +179,45 @@
     }
 
     /* =========================================
-       3. البالونات والكونفيتي (حفلة بجد)
+       3. البالونات والكونفيتي (بناتي مبهج جداً)
        ========================================= */
     #fx-canvas, #balloon-layer { position: fixed; inset: 0; pointer-events: none; z-index: 50; }
-    .party-balloon {
-      position: absolute; bottom: -200px;
+    .girly-balloon {
+      position: absolute; bottom: -180px;
       border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
-      box-shadow: inset -5px -5px 15px rgba(0,0,0,0.1), inset 5px 5px 15px rgba(255,255,255,0.6), 0 15px 25px rgba(0,0,0,0.15);
+      box-shadow: inset -5px -5px 12px rgba(0,0,0,0.08), inset 5px 5px 15px rgba(255,255,255,0.8), 0 10px 20px rgba(0,0,0,0.1);
       display: flex; align-items: center; justify-content: center;
     }
-    .party-balloon::after {
-      content: ''; position: absolute; bottom: -35px; left: 50%; transform: translateX(-50%);
-      width: 2px; height: 40px; background: rgba(0,0,0,0.2);
+    .girly-balloon::after {
+      content: ''; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);
+      width: 1.5px; height: 35px; background: rgba(0,0,0,0.15);
     }
 
-    /* التجاوب مع الموبايل */
-    @media (max-width: 850px) {
-      .video-frame { width: 240px; height: 240px; }
-      .glass-screen { padding: 40px 20px 30px 20px; border-radius: 25px; margin-top: -20px; }
-      .header-text h1 { font-size: 32px; }
-      .countdown-container { gap: 10px; }
-      .time-box { padding: 15px 5px; min-width: 60px; }
-      .num { font-size: 35px; }
-      .player-bar { flex-direction: column; padding: 20px; border-radius: 20px; }
-      .celeb-text { font-size: 30px; }
-      .celeb-text span { font-size: 40px; }
-      .letter-card { padding: 30px 20px; }
-      .btn-enter { font-size: 18px; padding: 12px 30px; }
+    /* التجاوب */
+    @media (max-width: 800px) {
+      .cake-frame { width: 220px; height: 220px; }
+      .girly-glass-board { padding: 40px 18px 25px 18px; border-radius: 25px; margin-top: -20px; }
+      .board-header h1 { font-size: 30px; }
+      .countdown-flex { gap: 8px; }
+      .time-box { padding: 12px 4px; min-width: 55px; }
+      .num { font-size: 32px; }
+      .player-strip { flex-direction: column; gap: 12px; padding: 15px; }
+      .celeb-text { font-size: 28px; }
+      .celeb-text span { font-size: 35px; }
+      .girly-card { padding: 30px 18px; }
+      .btn-girly-enter { font-size: 16px; padding: 12px 30px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- الخلفية المبهجة -->
-  <div class="animated-bg"></div>
-  <div class="bg-shapes">
-    <div class="shape shape1"></div>
-    <div class="shape shape2"></div>
-    <div class="shape shape3"></div>
-  </div>
+  <div class="girly-glow"></div>
 
-  <!-- شاشة الدخول -->
+  <!-- شاشة الدخول (الرسالة البناتية) -->
   <div id="welcome-screen">
-    <div class="letter-card">
-      <h2 class="letter-title">إلى نور عيني 🎂</h2>
-      <div class="letter-body">
+    <div class="girly-card">
+      <h2 class="girly-title">إلى نور عيني 🌸</h2>
+      <div class="girly-body">
         <p>كل سنه وانتِ طيبه ي نور عين بابا، كل سنه وانتِ بنتي وحبيبتي وصحبتي واحلي حاجه حصلتلي ف حياتي. من امبارح وانا قاعد متوتر اوييييييييي واما النت عندك باظ كنت زعلان اوي لاني نفسي افرحك زي ما بتفرحيني بس الحمد لله ظبطت شويه اهه.</p>
         <p>تعبي بقي نقول كلمتين.. انا من اول يوم قلتلك فيه بحبك ي نونتي وانا حاسس احساس غريب اوييييييييي احساس عمري ما حسيته قبل كده.. عارفه لما تحبي حد اوييييييييي وتيجي تبصي تلاقي حد جمبك حنين اوييييييييي وجميل اوييييييييي.</p>
         <p>عارفه ي نونتي انا ساعات بحس ان انا اللي ابنك مش انتِ اللي بنتي.. حنيتك عليا ي نونتي متتقدرش ب كنوز الدنيا، زعلك عليا لما بزعل او بكون مضايق بالدنيا كلها. كل يوم ببقي فخور ب اختياري اكتر من الاول لاني مش بس اخترت شخص احبه ويحبني لا ده انا اخترت بنوته قمر قمر اوي كمان، حاجه كده زي نجمه نزله من السماء، حاجه متتقدرش ب فلوس الدنيا كلها.</p>
@@ -246,51 +227,51 @@
         <p>اوعي تزعلي ان اصحابك دول مبعتلكيش، تصدقي وتؤمني بالله انا نفسي يبعدوا عنك ولا حد فيهم ينطق معاكي كلمه عشان دول مش صحاب. بكره تقابلي ف الكليه ناس احسن منهم ميت مره اخلاقنا وكل حاجه، اتقربي من اللي اخلاقهم حلوه. انا بخاف عليكي اوييييييييي وبغير عليكي اويييييييييي نونتي.. بغير عليكي اويييييييييي ي رخمه اوعي ي نونتي تقفي مع ولد عنده 7 سنين حته هزعلك ها اوعي اوعي.</p>
         <p>بحبك ي نور عيني بحبك اوى.. طاب عامك وجميع اعوامك ي نور عيني، والسنه الجايه نكون بنحتفل مع بعض ويكون الدنيا كلها عارفه اللي بينا. بحبك اويييييييييي نورعين بابا بحبك اوييييييييي كل سنه وانتِ جمبي ومعايا وسندي ف دنيتي ومصدر فرحتي كل سنه وانتِ طيبه ي نور عين بابا والحاجه الحلوه اللي ف حياة بابا.</p>
       </div>
-      <!-- الزر مع اللودر لمنع الدخول قبل تحميل الصوتيات -->
-      <button class="btn-enter" id="enter-btn" disabled>
-        <div class="loader"></div>
-        <span id="btn-text">جاري تجهيز الحفلة...</span>
+      <!-- زر الدخول مع لودر التحميل -->
+      <button class="btn-girly-enter" id="enter-btn" disabled>
+        <div class="spinner"></div>
+        <span id="btn-text">جاري تجهيز مفاجأة الحفلة...</span>
       </button>
     </div>
   </div>
 
   <div id="flash-overlay"></div>
 
-  <!-- الواجهة الرئيسية (التخطيط العمودي) -->
+  <!-- الواجهة الرئيسية -->
   <main class="dashboard" id="main-ui">
     
-    <!-- 1. الفيديو (الكيكة) بالمركز الأعلى -->
-    <div class="video-section">
-      <div class="video-frame">
-        <div class="video-core">
+    <!-- 1. الفيديو (قالب الكيكة والفخامة فوق) -->
+    <div class="cake-section">
+      <div class="cake-frame">
+        <div class="cake-core">
           <video id="vid-main" src="1.mp4" muted loop playsinline></video>
         </div>
       </div>
     </div>
 
-    <!-- 2. الشاشة الزجاجية المبهجة بالأسفل -->
-    <div class="glass-screen">
+    <!-- 2. الشاشة الزجاجية البناتية بالأسفل -->
+    <div class="girly-glass-board">
       
-      <div class="header-text">
-        <h1>9 - 9 🎂</h1>
+      <div class="board-header">
+        <h1>9 - 9 🌸</h1>
         <p>عيد ميلاد رفيقة دربي وعمري</p>
       </div>
 
       <!-- العداد -->
-      <div class="countdown-container" id="cd-ui">
+      <div class="countdown-flex" id="cd-ui">
         <div class="time-box"><div class="num" id="d-val">00</div><div class="lbl">يوم</div></div>
         <div class="time-box"><div class="num" id="h-val">00</div><div class="lbl">ساعة</div></div>
         <div class="time-box"><div class="num" id="m-val">00</div><div class="lbl">دقيقة</div></div>
         <div class="time-box"><div class="num" id="s-val">00</div><div class="lbl">ثانية</div></div>
       </div>
 
-      <!-- رسالة الاحتفال (تظهر بدل العداد عند الصفر) -->
+      <!-- رسالة الاحتفال عند الصفر -->
       <div id="celebration-msg">
-        <h2 class="celeb-text">كل سنة وأنتِ طيبة يا<br><span>نـور عـيـن بـابـا 🎉</span></h2>
+        <h2 class="celeb-text">كل سنة وأنتِ طيبة يا<br><span>نـور عـيـن بـابـا 🌸💖</span></h2>
       </div>
 
-      <!-- شريط التحكم بالموسيقى -->
-      <div class="player-bar">
+      <!-- شريط الموسيقى -->
+      <div class="player-strip">
         <div class="track-info">
           <div class="eq" id="eq-ui" style="display:none;"><span></span><span></span><span></span></div>
           <span id="track-name-ui">جاري التحضير...</span>
@@ -303,12 +284,12 @@
         </div>
 
         <div class="vol-box">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
           <input type="range" id="vol-slider" min="0" max="100" value="80">
         </div>
       </div>
       
-      <button style="background:transparent; border:none; color:var(--text-muted); text-decoration:underline; font-weight:700; cursor:pointer;" id="toggle-fx">تشغيل / إيقاف بالونات الحفلة 🎈</button>
+      <button style="background:transparent; border:none; color:#db2777; text-decoration:underline; font-weight:700; cursor:pointer;" id="toggle-fx">تشغيل / إيقاف بالونات الحفلة 🎈</button>
     </div>
   </main>
 
@@ -320,16 +301,12 @@
   <audio id="partyAudio" src="https://www.dropbox.com/scl/fi/n2hm9kgrf89s8ih7ouyd2/song1.mp3?rlkey=ydw6ka7f255m9zdwifui1oh26&st=bxqf7vnz&dl=1" preload="auto"></audio>
 
   <script>
-  // ==========================================
-  // إعدادات الصوت والميديا
-  // ==========================================
+  // قائمة الموسيقى
   const PLAYLIST = [
     'https://www.dropbox.com/scl/fi/ljl2jx0rdpadn7smacozj/party.mp3?rlkey=0yddwekvxioiy4mr6u54ar1d9&st=rhdigu0j&dl=1',
     'https://www.dropbox.com/scl/fi/6t4sqpw6bh1j8dsfp3hmm/song2.mp3?rlkey=s182ogwzwb7nwi028znptooc5&st=wonbpd1b&dl=1'
   ];
-  const PLAYLIST_NAMES = ['أغنية هادية ١', 'أغنية هادية ٢'];
-  
-  // تاريخ عيد الميلاد
+  const PLAYLIST_NAMES = ['أغنية عيد الميلاد 1', 'أغنية عيد الميلاد 2'];
   const TARGET_DATE = "2026-09-09T11:00:00";
 
   const bgAudio = document.getElementById('bgAudio');
@@ -345,19 +322,19 @@
   let currentTrack = 0, isPlaying = false, isBirthdayMode = false;
   bgAudio.volume = partyAudio.volume = 0.8;
 
-  // حل مشكلة التأخير: تفعيل زر الدخول فقط عند جاهزية الصوت
+  // حل مشكلة الصوت وعدم سماعه: ضمان الجاهزية التامة وفك الكتم البرمجي
   function enableApp() {
     if(!enterBtn.disabled) return;
     enterBtn.disabled = false;
-    btnText.textContent = "يلا نحتفل 🎉";
+    btnText.textContent = "فتح مفاجأة الحفلة ✨";
   }
   bgAudio.addEventListener('canplaythrough', enableApp);
   partyAudio.addEventListener('canplaythrough', enableApp);
-  setTimeout(enableApp, 3500); // تأمين تفعيل الزر بعد 3.5 ثواني كحد أقصى
+  setTimeout(enableApp, 3000);
 
   function updatePlayerUI() {
     if(isBirthdayMode) {
-      trackNameUI.innerHTML = `أغنية الاحتفال 🎈`;
+      trackNameUI.innerHTML = `مفاجأة الحفلة الكبرى 🌸`;
     } else {
       trackNameUI.innerHTML = `🎵 ${PLAYLIST_NAMES[currentTrack]}`;
     }
@@ -369,10 +346,19 @@
     let activeAudio = isBirthdayMode ? partyAudio : bgAudio;
     if(!isBirthdayMode && bgAudio.src !== PLAYLIST[currentTrack]) { bgAudio.src = PLAYLIST[currentTrack]; }
     
+    // إجبار تشغيل الصوت وفك كتم الميديا بوضوح تام
+    activeAudio.muted = false;
+    mainVideo.muted = true; // الفيديو يظل صامتاً كخلفية بينما الموسيقى تعمل بصوت عالٍ
+
     if(isPlaying) {
       activeAudio.pause(); mainVideo.pause(); isPlaying = false;
     } else {
-      activeAudio.play().catch(e=>{}); mainVideo.play().catch(e=>{}); isPlaying = true;
+      let p1 = activeAudio.play();
+      let p2 = mainVideo.play();
+      if(p1 !== undefined) {
+        p1.then(() => { isPlaying = true; updatePlayerUI(); }).catch(e => console.log(e));
+      }
+      if(p2 !== undefined) { p2.catch(e => {}); }
     }
     updatePlayerUI();
   }
@@ -380,14 +366,19 @@
   playBtn.onclick = toggleMedia;
   document.getElementById('btn-next').onclick = () => { if(!isBirthdayMode){ currentTrack = (currentTrack + 1) % PLAYLIST.length; isPlaying=false; toggleMedia(); } };
   document.getElementById('btn-prev').onclick = () => { if(!isBirthdayMode){ currentTrack = (currentTrack - 1 + PLAYLIST.length) % PLAYLIST.length; isPlaying=false; toggleMedia(); } };
-  document.getElementById('vol-slider').oninput = (e) => { bgAudio.volume = partyAudio.volume = e.target.value / 100; };
+  document.getElementById('vol-slider').oninput = (e) => { 
+    let v = e.target.value / 100;
+    bgAudio.volume = partyAudio.volume = v; 
+    bgAudio.muted = (v === 0);
+    partyAudio.muted = (v === 0);
+  };
 
-  // الدخول بسلاسة وتشغيل الأغنية فوراً
+  // الدخول وانطلاق الصوت والفيديو معاً فوراً بدون أي تأخير
   enterBtn.onclick = () => {
     const actx = window.AudioContext || window.webkitAudioContext;
     if(actx) { new actx().resume(); }
     
-    // تشغيل الأغنية في نفس جزء الثانية مع إخفاء الرسالة
+    // تشغيل فوري للصوت
     if(!isPlaying) toggleMedia();
 
     const screen = document.getElementById('welcome-screen');
@@ -400,7 +391,7 @@
   };
 
   // ==========================================
-  // لحظة الصفر (الاحتفال الكبير وانفجار الألوان)
+  // لحظة الصفر (الاحتفال الساحر)
   // ==========================================
   function triggerCelebration() {
     if(isBirthdayMode) return;
@@ -417,13 +408,14 @@
         document.getElementById('cd-ui').style.display = 'none';
         document.getElementById('celebration-msg').style.display = 'block';
         
-        // 2. تشغيل الأغنية الاحتفالية فوراً
+        // 2. تشغيل الأغنية الاحتفالية الثالثة فوراً وبصوت واضح
         bgAudio.pause();
         partyAudio.currentTime = 0;
+        partyAudio.muted = false;
         isPlaying = false;
-        toggleMedia(); // يشغل partyAudio ويحدث الـ UI
+        toggleMedia();
 
-        // 3. تفعيل الألعاب النارية والبالونات بكثافة
+        // 3. تفعيل بالونات الحفلة والكونفيتي
         startBalloons(true);
         startConfetti();
 
@@ -453,25 +445,25 @@
   const timer = setInterval(tick, 1000); tick();
 
   // ==========================================
-  // البالونات المبهجة
+  // البالونات البناتية الرقيقة
   // ==========================================
   let bTimer = null;
   const bLayer = document.getElementById('balloon-layer');
-  const BALLOON_COLORS = ['#ff007f', '#00f0ff', '#ffea00', '#bd00ff', '#00ff73'];
+  const GIRLY_BALLOONS = ['#ff758c', '#f472b6', '#fda4af', '#f43f5e', '#fb7185'];
 
   function spawnBalloon(){
     const b = document.createElement('div');
-    b.className = 'party-balloon';
-    const s = 55 + Math.random()*60;
+    b.className = 'girly-balloon';
+    const s = 50 + Math.random()*50;
     b.style.width = s+'px'; b.style.height = (s*1.25)+'px';
     b.style.left = (5 + Math.random()*90)+'%';
-    const color = BALLOON_COLORS[Math.floor(Math.random()*BALLOON_COLORS.length)];
-    b.style.background = `radial-gradient(circle at 35% 35%, #ffffff 10%, ${color} 80%)`;
+    const color = GIRLY_BALLOONS[Math.floor(Math.random()*GIRLY_BALLOONS.length)];
+    b.style.background = `radial-gradient(circle at 35% 35%, #ffffff 15%, ${color} 80%)`;
     bLayer.appendChild(b);
     
     b.animate([
-      { transform: `translateY(0) rotate(${Math.random()*20-10}deg)`, opacity: 0.95 },
-      { transform: `translateY(-130vh) translateX(${Math.random()*100-50}px) rotate(${Math.random()*60-30}deg)`, opacity: 0 }
+      { transform: `translateY(0) rotate(${Math.random()*15-7.5}deg)`, opacity: 0.95 },
+      { transform: `translateY(-130vh) translateX(${Math.random()*60-30}px) rotate(${Math.random()*40-20}deg)`, opacity: 0 }
     ], { duration: 9000 + Math.random()*5000, easing: 'linear' }).onfinish = () => b.remove();
   }
 
@@ -484,7 +476,7 @@
   };
 
   // ==========================================
-  // الألعاب النارية (الكونفيتي الملون)
+  // الكونفيتي الرقيق
   // ==========================================
   const fxCv = document.getElementById('fx-canvas');
   const fxCtx = fxCv.getContext('2d');
@@ -496,17 +488,17 @@
   function startConfetti() {
     if(fxActive) return;
     fxActive = true;
-    for(let i=0; i<300; i++){ addConfettiParticle(); }
-    setInterval(() => { if(confetti.length < 500) addConfettiParticle(true); }, 100);
+    for(let i=0; i<250; i++){ addConfettiParticle(); }
+    setInterval(() => { if(confetti.length < 400) addConfettiParticle(true); }, 120);
     requestAnimationFrame(renderConfetti);
   }
 
   function addConfettiParticle(topOnly=false) {
     confetti.push({
       x: Math.random() * fxW, y: topOnly ? -20 : Math.random() * fxH,
-      s: Math.random() * 10 + 5, c: BALLOON_COLORS[Math.floor(Math.random()*BALLOON_COLORS.length)],
-      dy: Math.random() * 4 + 3, dx: (Math.random() - 0.5) * 4,
-      tilt: Math.random() * Math.PI, spin: (Math.random() - 0.5) * 0.2
+      s: Math.random() * 8 + 4, c: GIRLY_BALLOONS[Math.floor(Math.random()*GIRLY_BALLOONS.length)],
+      dy: Math.random() * 3 + 2, dx: (Math.random() - 0.5) * 3,
+      tilt: Math.random() * Math.PI, spin: (Math.random() - 0.5) * 0.15
     });
   }
 
@@ -516,7 +508,7 @@
       let p = confetti[i];
       p.y += p.dy; p.x += p.dx; p.tilt += p.spin;
       fxCtx.save(); fxCtx.translate(p.x, p.y); fxCtx.rotate(p.tilt); fxCtx.fillStyle = p.c;
-      fxCtx.fillRect(-p.s/2, -p.s/2, p.s, p.s*0.6); fxCtx.restore();
+      fxCtx.fillRect(-p.s/2, -p.s/2, p.s, p.s*0.5); fxCtx.restore();
       if(p.y > fxH + 20) { confetti.splice(i, 1); i--; }
     }
     if(fxActive) requestAnimationFrame(renderConfetti);
